@@ -1,7 +1,0 @@
-\dt
-\dt
-SELECT * FROM Compras;
-SELECT * FROM Productos;
-/dt;
-\dt
-SELECT * FROM Usuarios;
