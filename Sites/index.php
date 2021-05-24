@@ -30,3 +30,32 @@
   <br>
   <br>
   <br>
+
+   <h3 align="center"> Consulta 3 </h3>
+   <p style="text-align:center;"> Seleccione un tipo de producto. Se van a mostrar todas las tiendas que venden al menos un producto de dicha categoría. </p>
+
+   <?php
+    #Primero obtenemos todos los tipos de productos
+    require("config/conexion.php");
+    $result = $db -> prepare("SELECT DISTINCT productos.ptipo FROM productos UNION SELECT DISTINCT comestibles.categoria FROM comestibles;");
+    $result -> execute();
+    $dataCollected = $result -> fetchAll();
+  ?>
+
+  <form align="center" action="consultas/consulta3.php" method="post">
+  Seleccinar un tipo:
+    <select name="tipo">
+      <?php
+      #Para cada tipo agregamos el tag <option value=value_of_param> visible_value </option>
+      foreach ($dataCollected as $d) {
+        echo "<option value=$d[0]>$d[0]</option>";
+      }
+      ?>
+    </select>
+    <br><br>
+    <input type="submit" value="Buscar por tipo">
+  </form>
+
+  <br>
+  <br>
+  <br>
