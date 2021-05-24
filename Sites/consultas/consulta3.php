@@ -12,7 +12,7 @@
     } elseif ($var == "comestible") {
     $query = "SELECT DISTINCT tiendas.tid, tiendas.tnombre FROM tiendas, tienda_vende, productos WHERE tienda_vende.tid = tiendas.tid AND tienda_vende.pid = productos.pid AND productos.ptipo LIKE '%$var%';";
     } else {
-    $query = "SELECT DISTINCT tiendas.tid, tiendas.tnombre FROM tiendas, comestibles, tienda_vende WHERE tienda_vende.tid = tiendas.tid AND tienda_vende.pid = comestbiles.pid AND comestbiles.categoria LIKE '%$var%';";
+    $query = "SELECT DISTINCT tiendas.tid, tiendas.tnombre FROM tiendas, comestibles, tienda_vende WHERE tienda_vende.tid = tiendas.tid AND tienda_vende.pid = comestibles.pid AND comestibles.categoria LIKE '%$var%';";
     }
 
   $result = $db -> prepare($query);
