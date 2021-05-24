@@ -1,12 +1,12 @@
 <?php include('templates/header.html');   ?>
 
 <body>
-  <h1 align="center">Grupo 33: Consulta de Datos </h1>
-  <p style="text-align:center;">Aquí podrás encontrar información sobre nuestra base de datos.</p>
+  <h1 align="center">Biblioteca Pokemón </h1>
+  <p style="text-align:center;">Aquí podrás encontrar información sobre pokemones.</p>
 
   <br>
 
-  <h3 align="center"> Consulta 1</h3>
+  <h3 align="center"> ¿Quieres buscar un Pokemón por tipo y/o nombre?</h3>
 
   <form align="center" action="consultas/consulta_tipo_nombre.php" method="post">
     Tipo:
