@@ -59,3 +59,17 @@
   <br>
   <br>
   <br>
+
+   <h3 align="center"> Consulta 4 </h3>
+   <p style="text-align:center;">  Ingrese una descripción. Se van a mostrar todos los usuarios qué compraron el producto con esa descripción .</p>
+
+   <form align="center" action="consultas/consulta4.php" method="post">
+    Descripcion:
+    <input type="text" name="descripcion_ingresada">
+    <br/><br/>
+    <input type="submit" value="Buscar">
+  </form>
+
+  <br>
+  <br>
+  <br>
