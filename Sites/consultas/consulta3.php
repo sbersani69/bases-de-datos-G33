@@ -7,7 +7,6 @@
 
   $var = $_POST["tipo"];
 
-  <?php
     if ($var == "comestible" or $var == "no_comestible") {
     $query = "SELECT DISTINCT tiendas.tid, tiendas.tnombre FROM tiendas, tienda_vende, productos WHERE tienda_vende.tid = tiendas.tid AND tienda_vende.pid = productos.pid AND productos.ptipo LIKE '%$var%';";
     <br>
