@@ -7,10 +7,10 @@
 
   $var = $_POST["tipo"];
 
-    if ($var == "no comestible") {
-    $query = "SELECT DISTINCT tiendas.tid, tiendas.tnombre FROM tiendas, tienda_vende, productos WHERE tienda_vende.tid = tiendas.tid AND tienda_vende.pid = productos.pid AND productos.ptipo = '$var' ORDER BY tiendas.tid;";
+    if ($var == "no") {
+    $query = "SELECT DISTINCT tiendas.tid, tiendas.tnombre FROM tiendas, tienda_vende, productos WHERE tienda_vende.tid = tiendas.tid AND tienda_vende.pid = productos.pid AND productos.ptipo = 'no comestible' ORDER BY tiendas.tid;";
     } elseif ($var == "comestible") {
-    $query = "SELECT DISTINCT tiendas.tid, tiendas.tnombre FROM tiendas, tienda_vende, productos WHERE tienda_vende.tid = tiendas.tid AND tienda_vende.pid = productos.pid AND productos.ptipo = '$var' ORDER BY tiendas.tid;";
+    $query = "SELECT DISTINCT tiendas.tid, tiendas.tnombre FROM tiendas, tienda_vende, productos WHERE tienda_vende.tid = tiendas.tid AND tienda_vende.pid = productos.pid AND productos.ptipo = 'comestible' ORDER BY tiendas.tid;";
     } else {
     $query = "SELECT DISTINCT tiendas.tid, tiendas.tnombre FROM tiendas, comestibles, tienda_vende WHERE tienda_vende.tid = tiendas.tid AND tienda_vende.pid = comestibles.pid AND comestibles.categoria = '$var' ORDER BY tiendas.tid;";
     }
