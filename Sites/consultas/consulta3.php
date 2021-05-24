@@ -7,7 +7,9 @@
 
   $var = $_POST["tipo"];
 
-    if ($var == "comestible" or $var == "no_comestible") {
+    if ($var == "comestible") {
+    $query = "SELECT DISTINCT tiendas.tid, tiendas.tnombre FROM tiendas, tienda_vende, productos WHERE tienda_vende.tid = tiendas.tid AND tienda_vende.pid = productos.pid AND productos.ptipo LIKE '%$var%';";
+    } elseif ($var == "no_comestible") {
     $query = "SELECT DISTINCT tiendas.tid, tiendas.tnombre FROM tiendas, tienda_vende, productos WHERE tienda_vende.tid = tiendas.tid AND tienda_vende.pid = productos.pid AND productos.ptipo LIKE '%$var%';";
     } else {
     $query = "SELECT DISTINCT tiendas.tid, tiendas.tnombre FROM tiendas, comestibles, tienda_vende WHERE tienda_vende.tid = tiendas.tid AND tienda_vende.pid = comestbiles.pid AND comestbiles.categoria LIKE '%$var%';";
