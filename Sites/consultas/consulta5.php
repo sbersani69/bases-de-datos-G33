@@ -7,7 +7,7 @@
   require("../config/conexion.php");
 
 	$Nombre_Comuna = $_POST["comuna_elegida"];
-	$query = "SELECT AVG(personal.edad) FROM personal, tiendas, direcciones, comunas WHERE personal.tid = tiendas.tid AND tiendas.did = direcciones.did AND direcciones.comunaid = comunas.comunaid AND LOWER(comunas.dcomuna) LIKE LOWER('%$Nombre_Comuna%');";
+	$query = "SELECT ROUND(AVG(personal.edad), 2) FROM personal, tiendas, direcciones, comunas WHERE personal.tid = tiendas.tid AND tiendas.did = direcciones.did AND direcciones.comunaid = comunas.comunaid AND LOWER(comunas.dcomuna) LIKE LOWER('%$Nombre_Comuna%');";
 	$result = $db -> prepare($query);
 	$result -> execute();
 	$tabla = $result -> fetchAll();
@@ -16,11 +16,10 @@
 	<table>
     <tr>
       <th> Promedio de Edad </th>
-      <th> Comuna Evaluada </th>
     </tr>
   <?php
 	foreach ($tabla as $informacion) {
-  		echo "<tr> <td>$informacion[0]</td> <td>$Nombre_Comuna</td> </tr>";
+  		echo "<tr> <td>$informacion[0]</td> </tr>";
 	}
   ?>
 	</table>
