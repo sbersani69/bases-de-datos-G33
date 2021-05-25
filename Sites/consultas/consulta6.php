@@ -10,7 +10,7 @@
     if ($var == "no") {
     $query = "SELECT tiendas.tid, tiendas.tnombre, SUM(T.Cantidad) as CC
               FROM (
-	                SELECT productos.pid, tienda_vende.tid as idetienda, COUNT(productos_compra.cantidad) as Cantidad
+	                SELECT productos.pid, tienda_vende.tid as idetienda, SUM(productos_compra.cantidad) as Cantidad
 	                FROM productos_compra, productos, compras, tienda_vende
 	                WHERE productos.pid = productos_compra.pid AND compras.cid = productos_compra.cid  AND tienda_vende.pid = productos.pid AND productos.ptipo = 'no comestible'
 	                GROUP BY productos.pid, idetienda) as T, tiendas
@@ -21,7 +21,7 @@
     } elseif ($var == "comestible") {
     $query = "SELECT tiendas.tid, tiendas.tnombre, SUM(T.Cantidad) as CC
               FROM (
-	                SELECT productos.pid, tienda_vende.tid as idetienda, COUNT(productos_compra.cantidad) as Cantidad
+	                SELECT productos.pid, tienda_vende.tid as idetienda, SUM(productos_compra.cantidad) as Cantidad
 	                FROM productos_compra, productos, compras, tienda_vende
 	                WHERE productos.pid = productos_compra.pid AND compras.cid = productos_compra.cid  AND tienda_vende.pid = productos.pid AND productos.ptipo = 'comestible'
 	                GROUP BY productos.pid, idetienda) as T, tiendas
