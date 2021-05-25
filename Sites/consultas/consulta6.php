@@ -8,7 +8,7 @@
   $var = $_POST["tipo"];
 
     if ($var == "no") {
-    $query = "SELECT tiendas.tid, tiendas.tnombre, SUM(T.Cantidad)
+    $query = "SELECT tiendas.tid, tiendas.tnombre, SUM(T.Cantidad) as CC
               FROM (
 	                SELECT productos.pid as ide, COUNT(productos_compra.cantidad) as Cantidad
 	                FROM productos_compra, productos, compras
@@ -17,9 +17,10 @@
 	                ) as T, tiendas, tienda_vende
               WHERE T.ide = tienda_vende.pid AND tienda_vende.tid = tiendas.tid
               GROUP BY tiendas.tid
+              ORDER BY CC DESC
               FETCH FIRST 10 ROWS ONLY;";
     } elseif ($var == "comestible") {
-    $query = "SELECT tiendas.tid, tiendas.tnombre, SUM(T.Cantidad)
+    $query = "SELECT tiendas.tid, tiendas.tnombre, SUM(T.Cantidad) as CC
               FROM (
 	                SELECT productos.pid as ide, COUNT(productos_compra.cantidad) as Cantidad
 	                FROM productos_compra, productos, compras
@@ -28,6 +29,7 @@
 	                ) as T, tiendas, tienda_vende
               WHERE T.ide = tienda_vende.pid AND tienda_vende.tid = tiendas.tid
               GROUP BY tiendas.tid
+              ORDER BY CC DESC
               FETCH FIRST 10 ROWS ONLY;";
     } else {
     $query = "SELECT tiendas.tid FROM tiendas;";
