@@ -20,7 +20,7 @@
     </tr>
   <?php
 	foreach ($tabla as $informacion) {
-  		echo "<tr> <td>$informacion[0]</td> <td>$informacion[1]</td> </tr>";
+  		echo "<tr> <td>$informacion[0]</td> <td>$Nombre_Comuna</td> </tr>";
 	}
   ?>
 	</table>
