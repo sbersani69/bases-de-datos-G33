@@ -73,3 +73,17 @@
   <br>
   <br>
   <br>
+
+  <h3 align="center"> Consulta 5 </h3>
+  <p style="text-align:center;"> Ingrese el nombre de una comuna. Se va a mostrar la edad promedio de los trabajadores de tiendas en esa comuna </p>
+
+  <form align="center" action="consultas/consulta5.php" method="post">
+    Nombre_Comuna:
+    <input type="text" name="comuna_elegida">
+    <br/><br/>
+    <input type="submit" value="Buscar">
+  </form>
+
+  <br>
+  <br>
+  <br>
