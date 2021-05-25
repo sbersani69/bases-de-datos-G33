@@ -10,27 +10,27 @@
     if ($var == "no") {
     $query = "SELECT tiendas.tid, tiendas.tnombre, SUM(T.Cantidad) as CC
               FROM (
-	                SELECT productos.pid as ide, COUNT(productos_compra.cantidad) as Cantidad
-	                FROM productos_compra, productos, compras
-	                WHERE productos.pid = productos_compra.pid AND compras.cid = productos_compra.cid AND productos.ptipo = 'no comestible'
+	                SELECT tienda_vende.tid as idetienda, COUNT(productos_compra.cantidad) as Cantidad
+	                FROM productos_compra, productos, compras, tienda_vende
+	                WHERE productos.pid = productos_compra.pid AND compras.cid = productos_compra.cid AND productos.ptipo = 'no comestible' AND tienda_vende.pid = productos.pid
 	                GROUP BY productos.pid
-	                ) as T, tiendas, tienda_vende
-              WHERE T.ide = tienda_vende.pid AND tienda_vende.tid = tiendas.tid
+	                ) as T, tiendas
+              WHERE tienda_vende.tid = tiendas.tid
               GROUP BY tiendas.tid
               ORDER BY CC DESC
-              FETCH FIRST 10 ROWS ONLY;";
+              FETCH FIRST 3 ROWS ONLY;";
     } elseif ($var == "comestible") {
     $query = "SELECT tiendas.tid, tiendas.tnombre, SUM(T.Cantidad) as CC
               FROM (
-	                SELECT productos.pid as ide, COUNT(productos_compra.cantidad) as Cantidad
-	                FROM productos_compra, productos, compras
-	                WHERE productos.pid = productos_compra.pid AND compras.cid = productos_compra.cid AND productos.ptipo = 'comestible'
+	                SELECT tienda_vende.tid as idetienda, COUNT(productos_compra.cantidad) as Cantidad
+	                FROM productos_compra, productos, compras, tienda_vende
+	                WHERE productos.pid = productos_compra.pid AND compras.cid = productos_compra.cid AND productos.ptipo = 'no comestible' AND tienda_vende.pid = productos.pid
 	                GROUP BY productos.pid
-	                ) as T, tiendas, tienda_vende
-              WHERE T.ide = tienda_vende.pid AND tienda_vende.tid = tiendas.tid
+	                ) as T, tiendas
+              WHERE tienda_vende.tid = tiendas.tid
               GROUP BY tiendas.tid
               ORDER BY CC DESC
-              FETCH FIRST 10 ROWS ONLY;";
+              FETCH FIRST 3 ROWS ONLY;";
     } else {
     $query = "SELECT tiendas.tid FROM tiendas;";
     }
