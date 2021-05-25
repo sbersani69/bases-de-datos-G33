@@ -7,7 +7,7 @@
   require("../config/conexion.php");
 
 	$Nombre_Comuna = $_POST["comuna_elegida"];
-	$query = "SELECT AVG(personal.edad), comunas.dcomuna FROM personal, tiendas, direcciones, comunas WHERE personal.tid = tiendas.tid AND tiendas.did = direcciones.did AND direcciones.comunaid = comunas.comunaid AND LOWER(comunas.dcomuna) LIKE LOWER('%$Nombre_Comuna%');";
+	$query = "SELECT AVG(personal.edad) FROM personal, tiendas, direcciones, comunas WHERE personal.tid = tiendas.tid AND tiendas.did = direcciones.did AND direcciones.comunaid = comunas.comunaid AND LOWER(comunas.dcomuna) LIKE LOWER('%$Nombre_Comuna%');";
 	$result = $db -> prepare($query);
 	$result -> execute();
 	$tabla = $result -> fetchAll();
