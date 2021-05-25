@@ -17,7 +17,7 @@
               WHERE T.idetienda = tiendas.tid
               GROUP BY tiendas.tid
               ORDER BY CC DESC
-              FETCH FIRST 3 ROWS ONLY;";
+              FETCH FIRST 10 ROWS ONLY;";
     } elseif ($var == "comestible") {
     $query = "SELECT tiendas.tid, tiendas.tnombre, SUM(T.Cantidad) as CC
               FROM (
@@ -28,9 +28,18 @@
               WHERE T.idetienda = tiendas.tid
               GROUP BY tiendas.tid
               ORDER BY CC DESC
-              FETCH FIRST 3 ROWS ONLY;";
+              FETCH FIRST 10 ROWS ONLY;";
     } else {
-    $query = "SELECT tiendas.tid FROM tiendas;";
+    $query = "SELECT tiendas.tid, tiendas.tnombre, SUM(T.Cantidad) as CC
+              FROM (
+	                SELECT comestibles.pid, tienda_vende.tid as idetienda, SUM(productos_compra.cantidad) as Cantidad
+	                FROM productos_compra, comestibles, compras, tienda_vende
+	                WHERE comestibles.pid = productos_compra.pid AND compras.cid = productos_compra.cid  AND tienda_vende.pid = comestibles.pid AND comestibles.categoria = '$var'
+	                GROUP BY comestibles.pid, idetienda) as T, tiendas
+              WHERE T.idetienda = tiendas.tid
+              GROUP BY tiendas.tid
+              ORDER BY CC DESC
+              FETCH FIRST 10 ROWS ONLY;";
     }
 
   $result = $db -> prepare($query);
