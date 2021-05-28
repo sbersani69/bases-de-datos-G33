@@ -6,39 +6,25 @@
   require("../config/conexion.php"); #Llama a conexión, crea el objeto PDO y obtiene la variable $db
 
   $var = $_POST["tipo"];
-
     if ($var == "no") {
-    $query = "SELECT tiendas.tid, tiendas.tnombre, SUM(T.Cantidad) as CC
-              FROM (
-	                SELECT productos.pid, tienda_vende.tid as idetienda, SUM(productos_compra.cantidad) as Cantidad
-	                FROM productos_compra, productos, compras, tienda_vende
-	                WHERE productos.pid = productos_compra.pid AND compras.cid = productos_compra.cid  AND tienda_vende.pid = productos.pid AND productos.ptipo = 'no comestible'
-	                GROUP BY productos.pid, idetienda) as T, tiendas
-              WHERE T.idetienda = tiendas.tid
+    $query = "SELECT tiendas.tid, tiendas.tnombre, SUM(productos_compra.cantidad) as Cantidad
+              FROM productos_compra, productos, compras, tiendas
+              WHERE productos.pid = productos_compra.pid AND compras.cid = productos_compra.cid AND productos.ptipo = 'no comestible' AND compras.tid = tiendas.tid
               GROUP BY tiendas.tid
-              ORDER BY CC DESC
+              ORDER BY Cantidad DESC
               FETCH FIRST 10 ROWS ONLY;";
     } elseif ($var == "comestible") {
-    $query = "SELECT tiendas.tid, tiendas.tnombre, SUM(T.Cantidad) as CC
-              FROM (
-	                SELECT productos.pid, tienda_vende.tid as idetienda, SUM(productos_compra.cantidad) as Cantidad
-	                FROM productos_compra, productos, compras, tienda_vende
-	                WHERE productos.pid = productos_compra.pid AND compras.cid = productos_compra.cid  AND tienda_vende.pid = productos.pid AND productos.ptipo = 'comestible'
-	                GROUP BY productos.pid, idetienda) as T, tiendas
-              WHERE T.idetienda = tiendas.tid
+    $query = "SELECT tiendas.tid, tiendas.tnombre, SUM(productos_compra.cantidad) as Cantidad
+              FROM productos_compra, productos, compras, tiendas
+              WHERE productos.pid = productos_compra.pid AND compras.cid = productos_compra.cid AND productos.ptipo = 'comestible' AND compras.tid = tiendas.tid
               GROUP BY tiendas.tid
-              ORDER BY CC DESC
+              ORDER BY Cantidad DESC
               FETCH FIRST 10 ROWS ONLY;";
     } else {
-    $query = "SELECT tiendas.tid, tiendas.tnombre, SUM(T.Cantidad) as CC
-              FROM (
-	                SELECT comestibles.pid, tienda_vende.tid as idetienda, SUM(productos_compra.cantidad) as Cantidad
-	                FROM productos_compra, comestibles, compras, tienda_vende
-	                WHERE comestibles.pid = productos_compra.pid AND compras.cid = productos_compra.cid  AND tienda_vende.pid = comestibles.pid AND comestibles.categoria = '$var'
-	                GROUP BY comestibles.pid, idetienda) as T, tiendas
-              WHERE T.idetienda = tiendas.tid
-              GROUP BY tiendas.tid
-              ORDER BY CC DESC
+    $query = "SELECT tiendas.tid, tiendas.tnombre, SUM(productos_compra.cantidad) as Cantidad
+              FROM productos_compra, comestibles, compras, tiendas
+              WHERE comestibles.pid = productos_compra.pid AND compras.cid = productos_compra.cid AND comestibles.categoria = '$var' AND compras.tid = tiendas.tid
+              GROUP BY Cantidad DESC
               FETCH FIRST 10 ROWS ONLY;";
     }
 
