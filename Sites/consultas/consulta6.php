@@ -24,7 +24,8 @@
     $query = "SELECT tiendas.tid, tiendas.tnombre, SUM(productos_compra.cantidad) as Cantidad
               FROM productos_compra, comestibles, compras, tiendas
               WHERE comestibles.pid = productos_compra.pid AND compras.cid = productos_compra.cid AND comestibles.categoria = '$var' AND compras.tid = tiendas.tid
-              GROUP BY Cantidad DESC
+              GROUP BY tiendas.tid
+              ORDER BY Cantidad DESC
               FETCH FIRST 10 ROWS ONLY;";
     }
 
