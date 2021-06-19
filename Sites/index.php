@@ -1,6 +1,11 @@
 <?php include('templates/header.html');   ?>
 
 <body>
+<h3>Ver base de datos 1</h3>
+    <form  action='./consultas/bdd33.php' method='GET'>
+        <input class='btn' type='submit' value='Consultar'>
+    </form>
+    
   <h1 align="center"> ENTREGA 2 </h1>
   <p style="text-align:center;">Aquí podrás encontrar información sobre Mi Tienda Web.</p>
 
