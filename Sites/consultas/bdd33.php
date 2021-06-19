@@ -3,7 +3,7 @@
     require("../config/conexion.php");
     include('../templates/header.html');
 
-    $query = "SELECT * FROM unidades ORDER BY id;";
+    $query = "SELECT * FROM unidades ORDER BY idunid;";
     $result = $db2 -> prepare($query);
     $result -> execute();
     $usuarios = $result -> fetchAll();
