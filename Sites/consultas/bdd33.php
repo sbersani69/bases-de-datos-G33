@@ -3,8 +3,8 @@
     require("../config/conexion.php");
     include('../templates/header.html');
 
-    $query = "SELECT * FROM usuarios ORDER BY uid;";
-    $result = $db -> prepare($query);
+    $query = "SELECT * FROM unidades ORDER BY id;";
+    $result = $db2 -> prepare($query);
     $result -> execute();
     $usuarios = $result -> fetchAll();
 
@@ -14,17 +14,15 @@
         <table class='table'>
             <thead>
                 <tr>
-                <th>uid</th>
-                <th>unombre</th>
-                <th>rut</th>
-                <th>edad</th>
-                <th>sexo</th>
+                <th>idunid</th>
+                <th>iddir</th>
+                <th>idjefe</th>
                 </tr>
             </thead>
             <tbody>
                 <?php
-                foreach ($usuarios as $pokemon) {
-                    echo "<tr> <td>$pokemon[0]</td> <td>$pokemon[1]</td> <td>$pokemon[2]</td> <td>$pokemon[3]</td> <td>$pokemon[4]</td> </tr>";
+                foreach ($unidades as $pokemon) {
+                    echo "<tr> <td>$pokemon[0]</td> <td>$pokemon[1]</td> <td>$pokemon[2]</td> </tr>";
                 }
                 ?>
             </tbody>
