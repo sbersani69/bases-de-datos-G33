@@ -10,8 +10,7 @@
     $usuarios = $result -> fetchAll();
 
     foreach ($usuarios as $user){
-
-        $query = "SELECT contras($user[0], '$user[1]'::varchar,'$user[2]'::varchar,$user[3],'$user[4]'::varchar, $user[5]);";
+        $query = "SELECT contras($user[0], '$user[1]'::varchar,'$user[2]'::varchar,$user[3],'$user[4]'::varchar);";
         $result = $db -> prepare($query);
         $result -> execute();
         $result -> fetchAll();
@@ -41,7 +40,7 @@
                 <?php
                 foreach ($usuarios as $user) {
                     echo "<tr>";
-                    for ($i = 0; $i < 6; $i++) {
+                    for ($i = 0; $i < 7; $i++) {
                         echo "<td>$user[$i]</td> ";
                     }
                     echo "</tr>";
@@ -55,4 +54,6 @@
             </p>
         </footer>
     </body>
+<?php include('../templates/footer.html'); ?>
+
 </html>

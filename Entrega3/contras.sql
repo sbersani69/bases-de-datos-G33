@@ -1,7 +1,7 @@
 CREATE OR REPLACE FUNCTION
 
 -- declaramos la función y sus argumentos
-contras (uid int, unombre varchar(100), rut varchar(100), edad int, sexo varchar(100), did int)
+contras (uid int, unombre varchar(100), rut varchar(100), edad int, sexo varchar(100))
 
 
 -- declaramos lo que retorna, en este caso un booleano
