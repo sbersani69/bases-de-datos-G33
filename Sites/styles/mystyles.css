@@ -1,66 +1,89 @@
-/* Este archivo no es necesario. Solo es para cambiar las propiedades de los objetos HTML
-Es mucho más fácil implementar una plantilla de Bootstrap que cambiar estas cosas a mano */
-
-input {
-    width: 10%;
-    height: 20px;
+body{
+    font-family: 'Montserrat', sans-serif;
+    margin: 0%;
 }
 
-input[type=text] {
-    font-size: 20px;
+.main{
+    padding: 3%;
 }
 
-input[type=submit] {
-    width: 10em;
-    height: 2em;
-    font-size: 25px;
+.title{
+    margin: 0%;
+    padding: 3%;
+    text-align: center;
+    line-height: normal;
+    font-size: xxx-large;
 }
 
-button {
-    background-color: green;
+.container{
+    text-align: center;
+    padding: 2%;
+}
+
+a{
+    color: rgb(29, 27, 27);
+}
+
+footer{
+    text-align: center;
+    padding: 4% 0%;
+    font-size: small;
+}
+
+.btn {
     color: white;
-    border: none;
-    border-radius: 5px;
-    font-size: 25px;
-    padding: 5px;
-    size: 30px;
+    background-color: black;
+    font-size: 17px;
+    line-height: 16px;
+    padding: 6px;
+    border-radius: 10px;
+    font-family: san-serif;
+    font-weight: bold;
+    border: 3px solid rgb(255 255 255);
 }
 
-h1 {
-    color: green;
+.btn:hover { background: lightblue; }
+
+.btn:active { background: rgb(82, 190, 209); }
+
+.form-element {
+    margin: 2%;
 }
 
-h1,
-h2,
-h3,
-h4 {
-    text-align: center;
+.form-element input,select{
+    border: 0;
+    box-shadow: 0 0 15px 4px rgb(0 0 0 / 6%);
+    padding: 10px;
+    border-radius: 10px;
+    font-family: 'Montserrat', sans-serif;
 }
 
-body {
-    width: 100%;
-    font-size: 20px;
-    text-align: center;
+.table {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    min-width: 400px;
 }
 
-table.center {
-    margin-left: auto;
-    margin-right: auto;
-    border: 1px solid black;
-    width: 90%;
-    text-align: center;
-    font-size: 20px
+.table thead tr {
+    background-color: lightblue;
+    color: #000;
+    text-align: left;
 }
 
-th {
-    background-color: #4CAF50;
-    color: white;
+.table th,
+.table td {
+    padding: 12px 15px;
 }
 
-tr:hover {
-    background-color: #f5f5f5;
+.table tbody tr {
+    border-bottom: 1px solid #dddddd;
 }
 
-tr:nth-child(even) {
-    background-color: #f2f2f2;
+.table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+.table tbody tr:last-of-type {
+    border-bottom: 2px solid rgb(82, 166, 181);
 }
