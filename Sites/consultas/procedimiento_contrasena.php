@@ -12,7 +12,6 @@
     foreach ($usuarios as $user){
 
         $query = "SELECT contrasena1($user[0], '$user[1]'::varchar,'$user[2]'::varchar,$user[3],'$user[4]' ::varchar, $user[5]);";
-
         $result = $db -> prepare($query);
         $result -> execute();
         $result -> fetchAll();
@@ -35,12 +34,17 @@
                 <th>edad</th>
                 <th>sexo</th>
                 <th>did</th>
+                <th>contrasena</th>
                 </tr>
             </thead>
             <tbody>
                 <?php
-                foreach ($usuarios as $informacion) {
-                echo "<tr> <td>$informacion[0]</td> <td>$informacion[1]</td> <td>$informacion[2]</td> <td>$informacion[3]</td> <td>$informacion[4]</td> <td>$informacion[5]</td> </tr>";
+                foreach ($usuarios as $user) {
+                    echo "<tr>";
+                    for ($i = 0; $i < 6; $i++) {
+                        echo "<td>$user[$i]</td> ";
+                    }
+                    echo "</tr>";
                 }
                 ?>
             </tbody>
