@@ -11,7 +11,7 @@
 
     foreach ($usuarios as $user){
 
-        $query = "SELECT contrasena1($user[0], '$user[1]'::varchar,'$user[2]'::varchar,$user[3],'$user[4]' ::varchar, $user[5]);";
+        $query = "SELECT contras($user[0], '$user[1]'::varchar,'$user[2]'::varchar,$user[3],'$user[4]'::varchar, $user[5]);";
         $result = $db -> prepare($query);
         $result -> execute();
         $result -> fetchAll();
