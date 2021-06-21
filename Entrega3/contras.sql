@@ -7,9 +7,6 @@ contras (uid int, unombre varchar(100), rut varchar(100), edad int, sexo varchar
 -- declaramos lo que retorna, en este caso un booleano
 RETURNS VOID AS $$
 
-DECLARE
-rut varchar;
-
 -- definimos nuestra función
 BEGIN
 
