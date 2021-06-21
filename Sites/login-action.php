@@ -1,5 +1,5 @@
 <?php 
-require("/config/conexion.php");
+require("config/conexion.php");
 
 session_start();
 if (isset($_POST['rut'])) {

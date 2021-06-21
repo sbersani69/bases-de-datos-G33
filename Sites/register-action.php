@@ -1,4 +1,4 @@
-<?php require("/config/conexion.php");?>
+<?php require("config/conexion.php");?>
 
 
 <?php
