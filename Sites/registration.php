@@ -32,13 +32,13 @@ Successfully Registered!
     <?php
 
     $hombre = Hombre;
-    $mujer = mujer;
+    $mujer = Mujer;
 	
 	echo "<option>{$hombre}</option>";
 	echo "<option>{$mujer}</option>";
               
     ?>
-</select>
+</select><br>
 <label>Password:</label><br>
 <input type="password" name="password" /><br>
 <input type="submit" value="Register" />
@@ -50,5 +50,3 @@ You already logged in. Click <a href="logout.php">here</a> to logout.
 ?>
 </body>
 </html>
-
-<?php include('../templates/footer.html'); ?>
