@@ -11,7 +11,7 @@ $password = $_POST['password'];
 
 $result = $db -> query("SELECT uid FROM usuarios ORDER BY uid DESC Limit 1");
 $ultimo_id = $result -> fetchAll();
-echo $ultimo_id[0][0] + 1 
+echo $ultimo_id[0][0] + 1; 
 
 $register = $db->query("INSERT INTO usuarios (uid, unombre, rut, edad, sexo, contrasena) VALUES ('$ultimo_id[0][0] + 1' ,'$username', '$rut', '$edad', '$sexo', '". md5($password)."')");
 if ($register) {
