@@ -19,9 +19,8 @@ BEGIN
 
     -- verificar si existe el rut en la base de datos, para ver si agregar o no al usuario (evitar duplicados).
     IF rut NOT IN (SELECT usuarios.rut FROM usuarios) THEN
-        INSERT INTO usuarios VALUES(idmax, nombre, rut, edad, sexo)
+        INSERT INTO usuarios VALUES(idmax, nombre, rut, edad, sexo);
         RETURN TRUE;
-    END IF;
     ELSE
         -- y false si no se agregó
         RETURN FALSE;
