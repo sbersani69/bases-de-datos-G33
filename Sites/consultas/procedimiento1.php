@@ -18,9 +18,16 @@
             echo "Hola mundo";
         }
 
-    $result = $db -> prepare($query);
-    $result -> execute();
-    $usuarios = $result -> fetchAll();
+        $result = $db -> prepare($query);
+        $result -> execute();
+        $usuarios = $result -> fetchAll();
+
+     // Mostramos los cambios en una nueva tabla
+    $queryp = "SELECT * FROM usuarios ORDER BY id DESC;";
+    $resultp = $db -> prepare($queryp);
+    $resultp -> execute();
+    $usuarios = $resultp -> fetchAll();
+
 
 ?>
 
