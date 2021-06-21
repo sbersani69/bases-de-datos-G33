@@ -14,12 +14,12 @@ $ultimo_id = $result -> fetchAll();
 $nuevo_id = $ultimo_id[0][0] + 1; 
 echo $nuevo_id;
 
-$register = $db->query("INSERT INTO usuarios (uid, unombre, rut, edad, sexo, contrasena) VALUES ('$nuevo_id' ,'$username', '$rut', '$edad', '$sexo', '". md5($password)."')");
+$register = $db -> query("INSERT INTO usuarios (uid, unombre, rut, edad, sexo, contrasena) VALUES ('$nuevo_id' ,'$username', '$rut', '$edad', '$sexo', '". md5($password)."')");
 if ($register) {
 header("Location: registration.php?register_action=success");
 }
 else {
-	echo 'No funciono mi pana';
+	echo $db -> error;
 }
 }
 ?>
