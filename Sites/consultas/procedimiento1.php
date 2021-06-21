@@ -16,17 +16,18 @@
 
             $query = "SELECT agregar_personal('$user_administracion[0]'::varchar,'$user_administracion[1]'::varchar,$user_administracion[2],'$user_administracion[3]'::varchar);";
             echo "Hola mundo";
-        }
 
-        $result = $db -> prepare($query);
-        $result -> execute();
-        $usuarios = $result -> fetchAll();
+
+            $result = $db -> prepare($query);
+            $result -> execute();
+            $usuarios = $result -> fetchAll();
+        }
 
      // Mostramos los cambios en una nueva tabla
     $queryp = "SELECT * FROM usuarios ORDER BY id DESC;";
     $resultp = $db -> prepare($queryp);
     $resultp -> execute();
-    $usuarios = $resultp -> fetchAll();
+    $usuariosp = $resultp -> fetchAll();
 
 
 ?>
@@ -44,7 +45,7 @@
             </thead>
             <tbody>
                 <?php
-                foreach ($usuarios as $user) {
+                foreach ($usuariosp as $user) {
                     echo "<tr>";
                     for ($i = 0; $i < 5; $i++) {
                         echo "<td>$user[$i]</td> ";
