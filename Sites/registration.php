@@ -49,10 +49,5 @@ You already logged in. Click <a href="logout.php">here</a> to logout.
 <?php }
 ?>
 
-<?php $result = $db -> query("SELECT uid FROM usuarios ORDER BY uid DESC Limit 1");
-$ultimo_id = $result -> fetchAll();
-echo $ultimo_id[0][0] + 1; 
-?>
-
 </body>
 </html>

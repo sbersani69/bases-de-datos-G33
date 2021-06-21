@@ -12,11 +12,10 @@ $password = $_POST['password'];
 $result = $db -> query("SELECT uid FROM usuarios ORDER BY uid DESC Limit 1");
 $ultimo_id = $result -> fetchAll();
 $nuevo_id = $ultimo_id[0][0] + 1; 
-echo $nuevo_id;
 
 $register = $db -> query("INSERT INTO usuarios (uid, unombre, rut, edad, sexo, contraseña) VALUES ('$nuevo_id' ,'$username', '$rut', '$edad', '$sexo', '". md5($password)."')");
 if ($register) {
-echo 'Registración Exitosa';
+echo 'Registración exitosa.';
 ?>
 <form method="post" action="index.php?">
 	<input type="submit" value="Volver" />
@@ -24,7 +23,7 @@ echo 'Registración Exitosa';
 <?php
 }
 else {
-	echo 'No funciono mi pana';
+	echo 'Registración no exitosa.';
 }
 }
 ?>
