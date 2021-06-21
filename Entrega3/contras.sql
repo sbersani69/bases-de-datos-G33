@@ -5,12 +5,20 @@ contras (uid int, unombre varchar(100), rut varchar(100), edad int, sexo varchar
 
 
 -- declaramos lo que retorna, en este caso un booleano
-RETURNS VOID AS $$
+RETURNS BOOLEAN AS $$
 
 -- definimos nuestra función
 BEGIN
     -- seteamos la contraseña hecha aleatoriamente
     UPDATE usuarios SET contraseña = contra WHERE usuarios.uid = uid AND usuarios.rut = rut;
+
+    IF rut IN (SELECT usuarios.rut FROM usuarios) THEN
+        UPDATE usuarios SET contraseña = contra WHERE usuarios.rut = rut;
+        RETURN TRUE;
+    ELSE
+        -- y false si no se agregó
+        RETURN FALSE;
+    END IF;
 
 
 -- finalizamos la definición de la función y declaramos el lenguaje
