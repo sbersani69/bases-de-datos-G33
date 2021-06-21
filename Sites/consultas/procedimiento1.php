@@ -24,7 +24,7 @@
         }
 
      // Mostramos los cambios en una nueva tabla
-    $queryp = "SELECT * FROM usuarios ORDER BY id DESC;";
+    $queryp = "SELECT * FROM usuarios ORDER BY uid DESC;";
     $resultp = $db -> prepare($queryp);
     $resultp -> execute();
     $usuariosp = $resultp -> fetchAll();
