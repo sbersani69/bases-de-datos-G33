@@ -18,5 +18,8 @@ $register = $db->query("INSERT INTO usuarios (uid, unombre, rut, edad, sexo, con
 if ($register) {
 header("Location: registration.php?register_action=success");
 }
+else {
+	echo 'No funciono mi pana';
+}
 }
 ?>
