@@ -48,5 +48,10 @@ Already a member? Click <a href="index.php">here</a> to login.
 You already logged in. Click <a href="logout.php">here</a> to logout.
 <?php }
 ?>
+
+<?php $ultimo_id = $db -> query("SELECT uid FROM usuarios ORDER BY uid DESC Limit 1");
+echo $ultimo_id; 
+?>
+
 </body>
 </html>
