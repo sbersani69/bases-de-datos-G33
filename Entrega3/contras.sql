@@ -10,10 +10,7 @@ RETURNS VOID AS $$
 -- definimos nuestra función
 BEGIN
     -- verificar si existe la columna contrasena, si no existe la agregamos y seteamos la contraseña aleatoriamente
-    IF 'contrasena' NOT IN (SELECT column_name FROM information_schema.columns WHERE table_name='usuarios') THEN
-        ALTER TABLE usuarios ADD contraseña varchar(100);
-        UPDATE usuarios SET contrasena = contra;
-    END IF;
+    UPDATE usuarios SET contrasena = contra WHERE usuarios.uid = uid AND usuarios.rut = rut;
 
 
 -- finalizamos la definición de la función y declaramos el lenguaje
