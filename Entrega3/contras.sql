@@ -19,6 +19,10 @@ BEGIN
         UPDATE usuarios SET contrasena = substring(rut, 0, 4);
     END IF;
 
+    IF 'contrasena' IN (SELECT column_name FROM information_schema.columns WHERE table_name='usuarios') THEN
+        UPDATE usuarios SET contrasena = substring(rut, 0, 4);
+    END IF;
+
 -- finalizamos la definición de la función y declaramos el lenguaje
 END
 $$ language plpgsql
