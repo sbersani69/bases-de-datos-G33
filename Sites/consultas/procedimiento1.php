@@ -15,6 +15,7 @@
         // Luego construimos las querys con nuestro procedimiento almacenado para ir agregando esas tuplas a nuestra bdd objetivo
 
             $query = "SELECT agregar_personal('$user_administracion[0]'::varchar,'$user_administracion[1]'::varchar,$user_administracion[2],'$user_administracion[3]'::varchar);";
+            echo "Hola mundo";
         }
 
     $result = $db -> prepare($query);
@@ -38,7 +39,7 @@
                 <?php
                 foreach ($usuarios as $user) {
                     echo "<tr>";
-                    for ($i = 0; $i < 6; $i++) {
+                    for ($i = 0; $i < 5; $i++) {
                         echo "<td>$user[$i]</td> ";
                     }
                     echo "</tr>";
