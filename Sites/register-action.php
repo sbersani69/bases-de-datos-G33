@@ -17,6 +17,12 @@ echo $nuevo_id;
 $register = $db -> query("INSERT INTO usuarios (uid, unombre, rut, edad, sexo, contraseña) VALUES ('$nuevo_id' ,'$username', '$rut', '$edad', '$sexo', '". md5($password)."')");
 if ($register) {
 header("Location: registration.php?register_action=success");
+echo 'Registración Exitosa';
+?>
+<form method="post" action="index.php?">
+	<input type="submit" value="Volver" />
+</form>
+<?php
 }
 else {
 	echo 'No funciono mi pana';
