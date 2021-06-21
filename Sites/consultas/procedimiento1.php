@@ -34,6 +34,7 @@
         for($i=0;$i<4;$i++) {
             //obtenemos un caracter aleatorio escogido de la cadena de caracteres
             $password .= substr($str,rand(0,62),1);
+            echo 'Password generado: '.$password;
             }
         $queryuser = "SELECT contras.sql($user[0],'$user[1]'::varchar,'$user[2]'::varchar, $user[3], '$user[4]'::varchar, '$user[5]'::varchar, '$password'::varchar);";
         $resultado = $db -> prepare($queryuser);

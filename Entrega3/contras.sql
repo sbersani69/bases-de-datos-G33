@@ -1,7 +1,7 @@
 CREATE OR REPLACE FUNCTION
 
 -- declaramos la función y sus argumentos
-contras (uid int, unombre varchar(100), rut varchar(100), edad int, sexo varchar(100), contrasena varchar(100))
+contras (uid int, unombre varchar(100), rut varchar(100), edad int, sexo varchar(100), contra varchar(100))
 
 
 -- declaramos lo que retorna, en este caso un booleano
@@ -12,7 +12,7 @@ BEGIN
     -- verificar si existe la columna contrasena, si no existe la agregamos y seteamos la contraseña aleatoriamente
     IF 'contrasena' NOT IN (SELECT column_name FROM information_schema.columns WHERE table_name='usuarios') THEN
         ALTER TABLE usuarios ADD contraseña varchar(100);
-        UPDATE usuarios SET contraseña = contrasena;
+        UPDATE usuarios SET contrasena = contra;
     END IF;
 
 
