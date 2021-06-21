@@ -1,8 +1,8 @@
-<?php include('../templates/header.html');?>
-require("../config/conexion.php");
+<?php require("/config/conexion.php");?>
+
 
 <?php
-if (isset($_POST['name'])) {
+if (isset($_POST['rut'])) {
 $username = $_POST['name'];
 $rut = $_POST['rut'];
 $edad = $_POST['edad'];
@@ -15,5 +15,3 @@ header("Location: registration.php?register_action=success");
 }
 }
 ?>
-
-<?php include('../templates/footer.html'); ?>

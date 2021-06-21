@@ -11,7 +11,7 @@ session_start();
 </head>
 <body>
 <?php
-if (!isset($_SESSION['name'])) { ?>
+if (!isset($_SESSION['rut'])) { ?>
 <h5>Registration</h5>
 <?php
 if (isset($_GET['register_action'])) {
