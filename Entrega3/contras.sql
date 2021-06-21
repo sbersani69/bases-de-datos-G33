@@ -5,7 +5,7 @@ contras (uid int, unombre varchar(100), rut varchar(100), edad int, sexo varchar
 
 
 -- declaramos lo que retorna, en este caso un booleano
-RETURNS BOOLEAN AS $$
+RETURNS VOID AS $$
 
 
 -- definimos nuestra función
