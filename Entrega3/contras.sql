@@ -10,7 +10,6 @@ RETURNS BOOLEAN AS $$
 -- definimos nuestra función
 BEGIN
     -- seteamos la contraseña hecha aleatoriamente
-    UPDATE usuarios SET contraseña = contra WHERE usuarios.uid = uid AND usuarios.rut = rut;
 
     IF rut IN (SELECT usuarios.rut FROM usuarios) THEN
         UPDATE usuarios SET contraseña = contra WHERE usuarios.rut = rut;
