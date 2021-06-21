@@ -63,7 +63,7 @@
                 <?php
                 foreach ($usuariosy as $user) {
                     echo "<tr>";
-                    for ($i = 0; $i < 5; $i++) {
+                    for ($i = 0; $i < 6; $i++) {
                         echo "<td>$user[$i]</td> ";
                     }
                     echo "</tr>";
