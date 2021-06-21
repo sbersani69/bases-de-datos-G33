@@ -15,7 +15,6 @@
         // Luego construimos las querys con nuestro procedimiento almacenado para ir agregando esas tuplas a nuestra bdd objetivo
 
             $query = "SELECT agregar_personal('$user_administracion[0]'::varchar,'$user_administracion[1]'::varchar,$user_administracion[2],'$user_administracion[3]'::varchar);";
-            echo "Hola mundo";
 
 
             $result = $db -> prepare($query);
@@ -23,13 +22,30 @@
             $usuarios = $result -> fetchAll();
         }
 
-     // Mostramos los cambios en una nueva tabla
-    $queryp = "SELECT * FROM usuarios ORDER BY uid DESC;";
+     // Asignaremos contraseñas a los usuarios
+    $queryp = "SELECT * FROM usuarios;";
     $resultp = $db -> prepare($queryp);
     $resultp -> execute();
     $usuariosp = $resultp -> fetchAll();
 
+    foreach ($usuariosp as $user){
+        $str = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890";
+        $password = "";
+        for($i=0;$i<4;$i++) {
+            //obtenemos un caracter aleatorio escogido de la cadena de caracteres
+            $password .= substr($str,rand(0,62),1);
+            }
+        $queryuser = "SELECT contras.sql($user[0],'$user[1]'::varchar,'$user[2]'::varchar, $user[3], '$user[4]'::varchar, '$user[5]'::varchar, '$password'::varchar);";
+        $resultado = $db -> prepare($queryuser);
+        $resultado -> execute();
+        $usuarios = $result -> fetchAll();
+    }
 
+    // Mostrar como queda
+    $queryy = "SELECT * FROM usuarios;";
+    $resulty = $db -> prepare($queryy);
+    $resulty -> execute();
+    $usuariosy = $resulty -> fetchAll();
 ?>
 
     <body>
@@ -41,11 +57,12 @@
                 <th>rut</th>
                 <th>edad</th>
                 <th>sexo</th>
+                <th>contraseña</th>
                 </tr>
             </thead>
             <tbody>
                 <?php
-                foreach ($usuariosp as $user) {
+                foreach ($usuariosy as $user) {
                     echo "<tr>";
                     for ($i = 0; $i < 5; $i++) {
                         echo "<td>$user[$i]</td> ";
