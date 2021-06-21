@@ -4,19 +4,19 @@
     require("../config/conexion.php");
     include('../templates/header.html');
 
-    $query = "SELECT * FROM usuarios ORDER BY uid;";
-    $result = $db -> prepare($query);
+     // Primero obtenemos todos el personal administrativo que queremos agregar
+    $query = "SELECT Personal.nombre, AdministradoresYTrabajadores.rut, Personal.edad, Personal.sexo FROM AdministradoresYTrabajadores, Personal WHERE Personal.rut = AdministradoresYTrabajadores.rut AND AdministradoresYTrabajadores.clasificacion = 'administracion';";
+    $result = $db2 -> prepare($query);
     $result -> execute();
-    $usuarios = $result -> fetchAll();
+    $usuarios_administracion = $result -> fetchAll();
 
-    foreach ($usuarios as $user){
-        $query = "SELECT contras($user[0], '$user[1]'::varchar,'$user[2]'::varchar,$user[3],'$user[4]'::varchar);";
-        $result = $db -> prepare($query);
-        $result -> execute();
-        $result -> fetchAll();
-    }
+     foreach ($usuarios_administracion as $user_administracion){
 
-    $query = "SELECT * FROM usuarios ORDER BY uid DESC;";
+        // Luego construimos las querys con nuestro procedimiento almacenado para ir agregando esas tuplas a nuestra bdd objetivo
+
+            $query = "SELECT agregar_personal('$user_administracion[0]'::varchar,'$user_administracion[1]'::varchar,$user_administracion[2],'$user_administracion[3]'::varchar);";
+        }
+
     $result = $db -> prepare($query);
     $result -> execute();
     $usuarios = $result -> fetchAll();
@@ -32,7 +32,6 @@
                 <th>rut</th>
                 <th>edad</th>
                 <th>sexo</th>
-                <th>contrasena</th>
                 </tr>
             </thead>
             <tbody>
