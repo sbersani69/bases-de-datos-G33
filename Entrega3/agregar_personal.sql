@@ -25,11 +25,11 @@ BEGIN
     -- verificar si existe el rut en la base de datos, para ver si agregar o no al usuario (evitar duplicados).
     IF rut NOT IN (SELECT usuarios.rut FROM usuarios) THEN
         INSERT INTO usuarios VALUES(idmax+1, nombre, rut, edad, sexo);
+        INSERT INTO direcciones_asociadas VALUES(idmax2+1, idmax+1, direccion);
         RETURN TRUE;
     ELSE
         -- y false si no se agregó
-        INSERT INTO direcciones_asociadas VALUES(idmax2+1, idmax+1, direccion);
-        RETURN TRUE;
+        RETURN FALSE;
     END IF;
 
 -- finalizamos la definición de la función y declaramos el lenguaje
