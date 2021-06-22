@@ -7,10 +7,12 @@ require("config/conexion.php");
   <h1 align="center">Login y Registración</h1>
 
   <?php
-  $rut_prueba=$_rut_global;
-  echo 'Este es el rut_prueba: '$rut_prueba;
-  echo 'Este es el rut_global: '$_rut_global;
-  echo 'Este es el SESSION: '$_SESSION['rut'];
+  $rut_prueba=$_rut_global;?>
+   Este es el rut_prueba: <?php echo $rut_prueba;?> 
+   Este es el rut_global: <?php echo $_rut_global; ?> 
+   Este es el SESSION: <?php echo $_SESSION['rut']; ?> 
+
+  <?php 
   if (!isset($rut_prueba)) { ;?>
   <h5>Login</h5>
   <form method="post" action="login-action.php">
