@@ -44,9 +44,9 @@ $row= $result -> fetchAll();
         $nombre = $_POST['name'];
         $gender = $_POST['sex'];
         $age = $_POST['age'];
-      $result = $db -> query("UPDATE usuarios SET unombre = '$nombre', rut = '$rut'
-                      sexo = '$gender', age = $age
-                      WHERE rut = '$id';");
+        $query = "UPDATE usuarios SET unombre = '$nombre', rut = '$rut', sexo = '$gender', age = $age WHERE rut = '$id';";
+        $result = $db -> prepare($query)
+        $result -> execute()
                     ?>
                      <script type="text/javascript">
             alert("Update Successfull.");

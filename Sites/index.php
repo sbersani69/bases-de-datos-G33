@@ -24,7 +24,7 @@ require("config/conexion.php");
 
   <?php 
   if (isset($_SESSION['rut'])) {; ?>
-    Usuario de rut: <?php echo $_SESSION['rut'] ?> | <a href="profile.php">Mi Perfil</a>;
+    Usuario de rut: <?php echo $_SESSION['rut'] ?> | <a href="profile.php">Mi Perfil</a>
   <?php };
   ?>
 
