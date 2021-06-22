@@ -34,6 +34,11 @@ require("config/conexion.php");
         <input class='btn' type='submit' value='Consultar'>
     </form>
 
+<h3>Ver procedimiento 2</h3>
+    <form  action='./consultas/procedimiento2.php' method='GET'>
+        <input class='btn' type='submit' value='Consultar'>
+    </form>
+
 <br>
 <br>
 <br>
