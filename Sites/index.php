@@ -18,7 +18,7 @@ require("config/conexion.php");
   </form>
   Not a member yet? Click <a href="registration.php">here</a> to register.
   <?php } else if (isset($_SESSION['rut'])) { ;?>
-  Usuario de rut: <?php echo $_SESSION['rut'] ?>
+  Usuario de rut: <?php echo $_SESSION['rut'] ?> <br>
   <a href="profile.php">Mi Perfil</a> <br>
   <a href="logout.php">Logout</a> <br>
   <br>
