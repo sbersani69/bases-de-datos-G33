@@ -2,7 +2,7 @@
   require("config/conexion.php");
   session_start();
 $id=$_SESSION['uid'];
-$query= $db -> query("SELECT * FROM usuarios where uid='$id'") or die(mysqli_error());
+$query= $db -> query("SELECT * FROM usuarios where uid='$id'");
 $row= $query -> fetchAll();
   ?>
   <h1>Perfil del Usuario</h1>
