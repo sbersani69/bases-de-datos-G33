@@ -13,7 +13,7 @@ $result = $db -> query("SELECT uid FROM usuarios ORDER BY uid DESC Limit 1");
 $ultimo_id = $result -> fetchAll();
 $nuevo_id = $ultimo_id[0][0] + 1; 
 
-$register = $db -> query("INSERT INTO usuarios (uid, unombre, rut, edad, sexo, contraseña) VALUES ('$nuevo_id' ,'$username', '$rut', '$edad', '$sexo', '". md5($password)."')");
+$register = $db -> query("INSERT INTO usuarios (uid, unombre, rut, edad, sexo, contraseña) VALUES ('$nuevo_id' ,'$username', '$rut', '$edad', '$sexo', '$password')");
 if ($register) {
 echo 'Registración exitosa.';
 ?>
