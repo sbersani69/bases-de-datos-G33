@@ -1,18 +1,16 @@
--- Esta función ingresa cualquier rut y lo comprueba en la base de datos
-
 CREATE OR REPLACE FUNCTION
 
 -- declaramos la función y sus argumentos
-comprobar_rut (rut2 varchar(100))
+agregar_administrador (rut_admin varchar(100))
 
 -- declaramos lo que retorna, en este caso un booleano
 RETURNS BOOLEAN AS $$
 
 -- definimos nuestra función
 BEGIN
-
     -- verificar si existe el rut en la base de datos, para ver si agregar o no al usuario (evitar duplicados).
-    IF rut2 IN (SELECT usuarios.rut FROM usuarios) THEN
+    IF rut_admin NOT IN (SELECT administradores.rut_adm FROM administradores) THEN
+        INSERT INTO administradores VALUES(rut_admin)
         RETURN TRUE;
     ELSE
         -- y false si no se agregó
