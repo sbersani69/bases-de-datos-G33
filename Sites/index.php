@@ -13,7 +13,7 @@ require("config/conexion.php");
    Este es el SESSION: <?php echo $_SESSION['rut']; ?> <br>
 
   <?php 
-  if (!isset($rut_prueba)) { ;?>
+  if (!isset($_SESSION['rut'])) { ;?>
   <h5>Login</h5>
   <form method="post" action="login-action.php">
   <label>RUT:</label><br>
@@ -23,14 +23,14 @@ require("config/conexion.php");
   <input type="submit" value="Login" />
   </form>
   Not a member yet? Click <a href="registration.php">here</a> to register.
-  <?php } else if (isset($rut_prueba)) { ;?>
-  <?php echo $rut_prueba ?> | <a href="logout.php">Logout</a>
+  <?php } else if (isset($_SESSION['rut'])) { ;?>
+  <?php echo $_SESSION['rut'] ?> | <a href="logout.php">Logout</a>
   <?php };
   ?>
 
   <?php 
-  if (isset($rut_prueba)) {;
-    echo $rut_prueba ?> | <a href="profile.php">Mi Perfil</a>;
+  if (isset($_SESSION['rut'])) {;
+    echo $_SESSION['rut'] ?> | <a href="profile.php">Mi Perfil</a>;
   <?php };
   ?>
 
