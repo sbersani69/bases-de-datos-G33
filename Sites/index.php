@@ -20,9 +20,9 @@
   ?>
 
   <?php 
-  if (isset($_SESSION['rut'])) {
-    echo $_SESSION['rut'] ?> | <a href="profile.php">Mi Perfil</a>
-  }
+  if (isset($_SESSION['rut'])) {;
+    echo $_SESSION['rut'] ?> | <a href="profile.php">Mi Perfil</a>;
+  };
   ?>
 
   <br>
