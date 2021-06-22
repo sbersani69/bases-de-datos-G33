@@ -1,6 +1,5 @@
 <?php include('templates/header.html');
-require("config/conexion.php");
-session_start();   ?>
+require("config/conexion.php");?>
 
 <body>
   <h1 align="center">Login y Registración</h1>
