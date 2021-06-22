@@ -6,6 +6,12 @@ $query= $db -> query("SELECT * FROM usuarios where uid='$id'");
 $row= $query;
   ?>
   <h1>Perfil del Usuario</h1>
+
+  <label>Nombre: <?php echo $row['unombre']; ?></label> <br>
+  <label>RUT: <?php echo $row['rut']; ?></label> <br>
+  <label>Sexo: <?php echo $row['sexo']; ?></label> <br>
+  <label>Edad: <?php echo $row['edad']; ?></label> <br>
+
 <div class="profile-input-field">
         <h3>Please Fill-out All Fields</h3>
         <form method="post" action="#" >
