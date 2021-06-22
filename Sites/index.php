@@ -4,7 +4,7 @@
   <h1 align="center">Login y Registración</h1>
 
   <?php
-  if (!isset($_SESSION['rut'])) { ?>
+  if (!isset($_SESSION['rut'])) { ;?>
   <h5>Login</h5>
   <form method="post" action="login-action.php">
   <label>RUT:</label><br>
@@ -14,9 +14,9 @@
   <input type="submit" value="Login" />
   </form>
   Not a member yet? Click <a href="registration.php">here</a> to register.
-  <?php } else if (isset($_SESSION['rut'])) { ?>
+  <?php } else if (isset($_SESSION['rut'])) { ;?>
   <?php echo $_SESSION['rut'] ?> | <a href="logout.php">Logout</a>
-  <?php }
+  <?php };
   ?>
 
   <?php 
