@@ -1,10 +1,11 @@
-<?php include('templates/header.html');   ?>
+<?php include('templates/header.html');
+require("config/conexion.php");
+session_start();   ?>
 
 <body>
   <h1 align="center">Login y Registración</h1>
 
   <?php
-  session_start();
   $rut_prueba=$_rut_global;
   echo $rut_prueba;
   echo $_rut_global;
