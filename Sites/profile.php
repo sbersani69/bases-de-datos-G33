@@ -2,8 +2,10 @@
   require("config/conexion.php");
   session_start();
 $id=$_SESSION['uid'];
-$query= $db -> query("SELECT * FROM usuarios where uid='$id'");
-$row= $query;
+$query= query("SELECT * FROM usuarios where uid='$id'");
+$result = $db -> prepare($query);
+$result -> execute();
+$row= $result -> fetchAll();
   ?>
   <h1>Perfil del Usuario</h1>
 
