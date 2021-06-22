@@ -17,8 +17,8 @@ require("config/conexion.php");
     <?php
 
     foreach ($tiendas as $tienda){
-
-	echo "<option>{$tienda[0]':'$tienda[1]}</option>";
+    $variable = '$tienda[0]:$tienda[1]'
+	echo "<option>{$variable}</option>";
     }
 
     ?>
