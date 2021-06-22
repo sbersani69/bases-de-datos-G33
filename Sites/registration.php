@@ -1,8 +1,8 @@
 <?php 
-require("config/conexion.php");
-
 session_start();
+require("config/conexion.php");
 ?>
+
 <!DOCTYPE html>
 <html>
 <head>

@@ -8,9 +8,9 @@ require("config/conexion.php");
 
   <?php
   $rut_prueba=$_rut_global;
-  echo $rut_prueba;
-  echo $_rut_global;
-  echo $_SESSION['rut'];
+  echo 'Este es el rut_prueba: '$rut_prueba;
+  echo 'Este es el rut_global: '$_rut_global;
+  echo 'Este es el SESSION: '$_SESSION['rut'];
   if (!isset($rut_prueba)) { ;?>
   <h5>Login</h5>
   <form method="post" action="login-action.php">

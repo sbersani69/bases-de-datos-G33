@@ -1,6 +1,6 @@
 <?php
-  require("config/conexion.php");
   session_start();
+  require("config/conexion.php");
 $id=$_SESSION['rut'];
 $query= "SELECT * FROM usuarios where rut='$id'";
 $result = $db -> prepare($query);

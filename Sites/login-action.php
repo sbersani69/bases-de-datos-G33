@@ -1,7 +1,7 @@
 <?php 
+session_start();
 require("config/conexion.php");
 
-session_start();
 if (isset($_POST['rut'])) {
 $rut = $_POST['rut'];
 $password = $_POST['password'];
