@@ -2,7 +2,7 @@
   require("config/conexion.php");
   session_start();
 $id=$_SESSION['uid'];
-$query= query("SELECT * FROM usuarios where uid='$id'");
+$query= "SELECT * FROM usuarios where uid='$id'";
 $result = $db -> prepare($query);
 $result -> execute();
 $row= $result -> fetchAll();
