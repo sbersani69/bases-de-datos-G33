@@ -11,7 +11,8 @@ session_start();
 </head>
 <body>
 <?php
-if (!isset($_SESSION_rut)) { ?>
+$rut_prueba=$_SESSION['rut'];
+if (!isset($rut_prueba)) { ?>
 <h5>Registration</h5>
 <?php
 if (isset($_GET['register_action'])) {
@@ -46,7 +47,8 @@ Successfully Registered!
 Already a member? Click <a href="index.php">here</a> to login.
 <?php } else { ?>
 You already logged in. Click <a href="logout.php">here</a> to logout.
-<?php }
+<?php
+echo $rut_prueba; }
 ?>
 
 </body>
