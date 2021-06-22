@@ -19,6 +19,12 @@
   <?php }
   ?>
 
+  <?php 
+  if (isset($_SESSION['rut'])) {
+    echo $_SESSION['rut'] ?> | <a href="profile.php">Mi Perfil</a>
+  }
+  ?>
+
   <br>
 <h3>Ver procedimiento 1</h3>
     <form  action='./consultas/procedimiento1.php' method='GET'>
