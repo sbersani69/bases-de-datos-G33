@@ -4,8 +4,7 @@
   <h1 align="center">Login y Registración</h1>
 
   <?php
-  $rut_sesion = $_SESSION['rut'];
-  echo $rut_sesion;
+  echo $_SESSION['rut'];
   if (!isset($_SESSION['rut'])) { ;?>
   <h5>Login</h5>
   <form method="post" action="login-action.php">
