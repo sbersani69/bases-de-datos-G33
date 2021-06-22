@@ -1,5 +1,5 @@
 <?php
-  include 'connection.php';
+  require("config/conexion.php");
   session_start();
 $id=$_SESSION['uid'];
 $query= $db -> query("SELECT * FROM usuarios where uid='$id'") or die(mysqli_error());
