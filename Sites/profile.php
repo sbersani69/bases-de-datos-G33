@@ -2,6 +2,7 @@
   require("config/conexion.php");
   session_start();
 $id=$_SESSION['uid'];
+echo $id;
 $query= "SELECT * FROM usuarios where uid='$id'";
 $result = $db -> prepare($query);
 $result -> execute();
@@ -9,10 +10,10 @@ $row= $result -> fetchAll();
   ?>
   <h1>Perfil del Usuario</h1>
 
-  <label>Nombre: <?php echo $row['unombre']; ?></label> <br>
-  <label>RUT: <?php echo $row['rut']; ?></label> <br>
-  <label>Sexo: <?php echo $row['sexo']; ?></label> <br>
-  <label>Edad: <?php echo $row['edad']; ?></label> <br>
+  <label>Nombre: <?php echo $row[0][1]; ?></label> <br>
+  <label>RUT: <?php echo $row[0][2]; ?></label> <br>
+  <label>Sexo: <?php echo $row[0][3]; ?></label> <br>
+  <label>Edad: <?php echo $row[0][4]; ?></label> <br>
 
 <div class="profile-input-field">
         <h3>Please Fill-out All Fields</h3>
