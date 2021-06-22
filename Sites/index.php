@@ -5,7 +5,7 @@
 
   <?php
   echo $_SESSION_rut;
-  if (!isset($_SESSION_rut)) { ;?>
+  if (!isset($_SESSION['rut'])) { ;?>
   <h5>Login</h5>
   <form method="post" action="login-action.php">
   <label>RUT:</label><br>
@@ -15,14 +15,14 @@
   <input type="submit" value="Login" />
   </form>
   Not a member yet? Click <a href="registration.php">here</a> to register.
-  <?php } else if (isset($_SESSION_rut)) { ;?>
-  <?php echo $_SESSION_rut ?> | <a href="logout.php">Logout</a>
+  <?php } else if (isset($_SESSION['rut'])) { ;?>
+  <?php echo $_SESSION['rut'] ?> | <a href="logout.php">Logout</a>
   <?php };
   ?>
 
   <?php 
-  if (isset($_SESSION_rut)) {;
-    echo $_SESSION_rut ?> | <a href="profile.php">Mi Perfil</a>;
+  if (isset($_SESSION['rut'])) {;
+    echo $_SESSION['rut'] ?> | <a href="profile.php">Mi Perfil</a>;
   <?php };
   ?>
 
