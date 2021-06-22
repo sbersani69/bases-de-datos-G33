@@ -18,27 +18,15 @@ require("config/conexion.php");
   </form>
   Not a member yet? Click <a href="registration.php">here</a> to register.
   <?php } else if (isset($_SESSION['rut'])) { ;?>
-  Usuario de rut: <?php echo $_SESSION['rut'] ?> | <a href="logout.php">Logout</a> <br>
-  <?php };
-  ?>
-
-  <?php 
-  if (isset($_SESSION['rut'])) {; ?>
-    Usuario de rut: <?php echo $_SESSION['rut'] ?> | <a href="profile.php">Mi Perfil</a>
-  <?php };
-  ?>
-
+  Usuario de rut: <?php echo $_SESSION['rut'] ?>
+  <a href="profile.php">Mi Perfil</a> <br>
+  <a href="logout.php">Logout</a> <br>
   <br>
-<h3>Ver procedimiento administradores</h3>
-    <form  action='./consultas/procedimiento_administradores.php' method='GET'>
-        <input class='btn' type='submit' value='Consultar'>
-    </form>
-
-<h3>Ver compras</h3>
+  <br>
+  <br>
+  <h3>Ver compras</h3>
     <form  action='compras.php' method='GET'>
         <input class='btn' type='submit' value='Consultar'>
     </form>
-
-<br>
-<br>
-<br>
+  <?php };
+  ?>
