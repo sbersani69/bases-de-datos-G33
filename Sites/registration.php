@@ -48,7 +48,7 @@ Already a member? Click <a href="index.php">here</a> to login.
 <?php } else { ?>
 You already logged in. Click <a href="logout.php">here</a> to logout.
 <?php
-echo $rut_prueba; }
+}
 ?>
 
 </body>
