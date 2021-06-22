@@ -1,9 +1,9 @@
 <?php
   require("config/conexion.php");
   session_start();
-$id=$_SESSION['uid'];
+$id=$_SESSION['rut'];
 echo $id;
-$query= "SELECT * FROM usuarios where uid='$id'";
+$query= "SELECT * FROM usuarios where rut='$id'";
 $result = $db -> prepare($query);
 $result -> execute();
 $row= $result -> fetchAll();
@@ -21,10 +21,6 @@ $row= $result -> fetchAll();
           <div class="form-group">
             <label>Nombre</label>
             <input type="text" class="form-control" name="name" style="width:20em;" placeholder="Enter your Fullname" value="<?php echo $row['unombre']; ?>" required />
-          </div>
-          <div class="form-group">
-            <label>RUT</label>
-            <input type="text" class="form-control" name="rut" style="width:20em;" placeholder="Enter your RUT" required value="<?php echo $row['rut']; ?>" />
           </div>
           <div class="form-group">
             <label>Sexo</label>
@@ -46,12 +42,11 @@ $row= $result -> fetchAll();
       <?php
       if(isset($_POST['submit'])){
         $nombre = $_POST['name'];
-        $rut = $_POST['rut'];
         $gender = $_POST['sex'];
         $age = $_POST['age'];
       $result = $db -> query("UPDATE usuarios SET unombre = '$nombre', rut = '$rut'
                       sexo = '$gender', age = $age
-                      WHERE uid = '$id';");
+                      WHERE rut = '$id';");
                     ?>
                      <script type="text/javascript">
             alert("Update Successfull.");
