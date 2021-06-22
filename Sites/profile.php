@@ -16,7 +16,7 @@ $row= $result -> fetchAll();
   <label>Edad: <?php echo $row[0][4]; ?></label> <br>
 
 <div class="profile-input-field">
-        <h3>Please Fill-out All Fields</h3>
+        <h3>Actualizar Información</h3>
         <form method="post" action="#" >
           <div class="form-group">
             <label>Nombre</label>
