@@ -32,7 +32,8 @@ $row= $result -> fetchAll();
           <div class="form-group">
             <input type="submit" name="submit" class="btn btn-primary" style="width:20em; margin:0;"><br><br>
             <center>
-             <a href="logout.php">Log out</a>
+             <a href="logout.php">Log out</a> <br>
+             <a href="index.php">Volver</a>
            </center>
           </div>
         </form>

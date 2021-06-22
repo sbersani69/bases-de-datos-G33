@@ -6,12 +6,6 @@ require("config/conexion.php");
 <body>
   <h1 align="center">Login y Registración</h1>
 
-  <?php
-  $rut_prueba=$_rut_global;?>
-   Este es el rut_prueba: <?php echo $rut_prueba;?> <br>
-   Este es el rut_global: <?php echo $_rut_global; ?> <br>
-   Este es el SESSION: <?php echo $_SESSION['rut']; ?> <br>
-
   <?php 
   if (!isset($_SESSION['rut'])) { ;?>
   <h5>Login</h5>
@@ -24,13 +18,13 @@ require("config/conexion.php");
   </form>
   Not a member yet? Click <a href="registration.php">here</a> to register.
   <?php } else if (isset($_SESSION['rut'])) { ;?>
-  <?php echo $_SESSION['rut'] ?> | <a href="logout.php">Logout</a>
+  Usuario de rut: <?php echo $_SESSION['rut'] ?> | <a href="logout.php">Logout</a> <br>
   <?php };
   ?>
 
   <?php 
-  if (isset($_SESSION['rut'])) {;
-    echo $_SESSION['rut'] ?> | <a href="profile.php">Mi Perfil</a>;
+  if (isset($_SESSION['rut'])) {; ?>
+    Usuario de rut: <?php echo $_SESSION['rut'] ?> | <a href="profile.php">Mi Perfil</a>;
   <?php };
   ?>
 
