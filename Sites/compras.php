@@ -7,14 +7,14 @@ require("config/conexion.php");
   <h1 align="center">Compras</h1>
 
     <?php
-    $query = "SELECT tiendas.tid, tiendas.tnombre FROM tiendas;";
+    $query = "SELECT tiendas.tid, tiendas.tnombre FROM tiendas ORDER BY tid;";
     $result = $db -> prepare($query);
     $result -> execute();
     $tiendas = $result -> fetchAll();
     $a = 0;
     foreach ($tiendas as $tienda){
 
-	    echo "boton '$a': $tienda[1]";
+	    echo "boton '$a': $tienda[1] \n";
 	    $a++;
     }
     ?>
@@ -29,11 +29,7 @@ require("config/conexion.php");
 
     ?>
     </select><br>
+    <input type="submit" value="Seleccionar" />
     </form>
 
 </body>
-<br>
-<br>
-<br>
-
-?>
