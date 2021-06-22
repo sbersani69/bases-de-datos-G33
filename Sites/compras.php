@@ -11,12 +11,6 @@ require("config/conexion.php");
     $result = $db -> prepare($query);
     $result -> execute();
     $tiendas = $result -> fetchAll();
-    $a = 0;
-    foreach ($tiendas as $tienda){
-
-	    echo "boton '$a': $tienda[1] \n";
-	    $a++;
-    }
     ?>
     <form method="post" action="./consultas/info_tiendas.php">
     <select name="Tienda">
@@ -24,7 +18,7 @@ require("config/conexion.php");
 
     foreach ($tiendas as $tienda){
 
-	echo "<option>{$tienda[0]}</option>";
+	echo "<option>{$tienda[0]:$tienda[1]}</option>";
     }
 
     ?>
