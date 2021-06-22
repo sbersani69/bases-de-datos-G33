@@ -33,6 +33,12 @@ require("config/conexion.php");
     <form  action='./consultas/procedimiento_administradores.php' method='GET'>
         <input class='btn' type='submit' value='Consultar'>
     </form>
+
+<h3>Ver compras</h3>
+    <form  action='compras.php' method='GET'>
+        <input class='btn' type='submit' value='Consultar'>
+    </form>
+
 <br>
 <br>
 <br>
