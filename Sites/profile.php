@@ -45,8 +45,8 @@ $row= $result -> fetchAll();
         $gender = $_POST['sex'];
         $age = $_POST['age'];
         $query = "UPDATE usuarios SET unombre = '$nombre', rut = '$rut', sexo = '$gender', age = $age WHERE rut = '$id';";
-        $result = $db -> prepare($query)
-        $result -> execute()
+        $result = $db -> prepare($query);
+        $result -> execute();
                     ?>
                      <script type="text/javascript">
             alert("Update Successfull.");
