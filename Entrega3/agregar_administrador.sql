@@ -10,7 +10,7 @@ RETURNS BOOLEAN AS $$
 BEGIN
     -- verificar si existe el rut en la base de datos, para ver si agregar o no al usuario (evitar duplicados).
     IF rut_admin NOT IN (SELECT administradores.rut_adm FROM administradores) THEN
-        INSERT INTO administradores VALUES(rut_admin)
+        INSERT INTO administradores VALUES(rut_admin);
         RETURN TRUE;
     ELSE
         -- y false si no se agregó
