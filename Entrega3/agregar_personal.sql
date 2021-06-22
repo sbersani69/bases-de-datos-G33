@@ -28,15 +28,8 @@ BEGIN
         RETURN TRUE;
     ELSE
         -- y false si no se agregó
-        RETURN FALSE;
-    END IF;
-
-    IF rut IN (SELECT usuarios.rut FROM usuarios) THEN
         INSERT INTO direcciones_asociadas VALUES(idmax2+1, idmax+1, direccion);
         RETURN TRUE;
-    ELSE
-        -- y false si no se agregó
-        RETURN FALSE;
     END IF;
 
 -- finalizamos la definición de la función y declaramos el lenguaje
