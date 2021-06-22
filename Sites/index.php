@@ -22,7 +22,7 @@
   <?php 
   if (isset($_SESSION['rut'])) {;
     echo $_SESSION['rut'] ?> | <a href="profile.php">Mi Perfil</a>;
-  };
+  <?php };
   ?>
 
   <br>
