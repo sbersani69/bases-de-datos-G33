@@ -3,7 +3,7 @@
   session_start();
 $id=$_SESSION['uid'];
 $query= $db -> query("SELECT * FROM usuarios where uid='$id'");
-$row= $query -> fetchAll();
+$row= $query;
   ?>
   <h1>Perfil del Usuario</h1>
 <div class="profile-input-field">
