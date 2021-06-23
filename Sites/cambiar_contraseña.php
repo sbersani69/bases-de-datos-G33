@@ -15,6 +15,7 @@ if ($old_pass == $current_pass) {
   $query2 = "UPDATE usuarios SET contraseña = '$new_pass' WHERE rut = $id;";
   $change = $db -> prepare($query2);
   $change -> execute();
+  $row_rara = $change -> fetchAll();
   echo 'Contraseña cambiada exitosamente.';
 ?>
 <form method="post" action="index.php?">

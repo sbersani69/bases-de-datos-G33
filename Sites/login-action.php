@@ -9,7 +9,7 @@ $query = "SELECT * FROM usuarios WHERE rut = '$rut' AND contraseña = '$password
 $result = $db -> prepare($query);
 $result -> execute();
 $usuario = $result -> fetchAll();
-if ($password = $usuario[0][5]) {
+if ($password == $usuario[0][5]) {
 $_SESSION['rut'] = $rut;
 header("Location: index.php");
 }
