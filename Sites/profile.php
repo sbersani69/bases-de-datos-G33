@@ -47,10 +47,10 @@ $row3 = $result3 -> fetchAll();
 <h3>Información Relevante.</h3>
 
 <?php if (isset($row3[0][0])) {
-  echo 'Usuario es ADMIN.'
+  echo 'Usuario es ADMIN.';
 }
 else {
-  echo 'Usuario no es Admin.'
+  echo 'Usuario no es Admin.';
 }
 ?>
 
