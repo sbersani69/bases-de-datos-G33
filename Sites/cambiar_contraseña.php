@@ -22,7 +22,7 @@ if ($old_pass = $current_pass): {
 </form>
 <?php
 }
-else {
+else: {
   header("Location: index.php");
 }
 ?>
