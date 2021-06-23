@@ -21,8 +21,8 @@ if ($old_pass = $current_pass){
   <input type="submit" value="Volver" />
 </form>
 <?php
+}
 else {
   header("Location: index.php");
-}
 }
 ?>
