@@ -9,6 +9,7 @@ $row= $result -> fetchAll();
 
 $old_pass = $_POST['old_pass'];
 $new_pass = $_POST['new_pass'];
+echo $row[0][0];
 
 if ($old_pass = $row[0][0]){
   echo 'Iniciando cambio de contraseña.';
