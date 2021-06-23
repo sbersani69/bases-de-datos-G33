@@ -22,6 +22,10 @@ $row2 = $result2 -> fetchAll();
   <label>Edad: <?php echo $row[0][4]; ?></label> <br>
   <label>Dirección: <?php echo $row2[0][0]; ?></label> <br>
 
+<br>
+<br>
+<br>
+
 <h3>¿Quieres cambiar tu contraseña?</h3>
 <form  action='cambiar_contraseña.php' method='POST'>
   <label>Contraseña antigua: </label><br>
