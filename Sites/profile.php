@@ -9,7 +9,7 @@ $row= $result -> fetchAll();
 $uid = $row[0][0];
 
 $query2 = "SELECT direccion FROM direcciones, direcciones_asociadas WHERE direcciones.did = direcciones_asociadas.did AND direcciones_asociadas.uid = '$uid';";
-$result2 = $db -> prepare($query);
+$result2 = $db -> prepare($query2);
 $result2 -> execute();
 $row2 = $result2 -> fetchAll();
 
