@@ -13,6 +13,11 @@ $result2 = $db -> prepare($query2);
 $result2 -> execute();
 $row2 = $result2 -> fetchAll();
 
+$query3 = "SELECT * FROM administradores WHERE rut_adm = '$uid';";
+$result3 = $db -> prepare($query3);
+$result3 -> execute();
+$row3 = $result3 -> fetchAll();
+
   ?>
   <h1>Perfil del Usuario</h1>
 
@@ -26,11 +31,29 @@ $row2 = $result2 -> fetchAll();
 <br>
 <br>
 
-<h3>¿Quieres cambiar tu contraseña?</h3>
+<h5>¿Quieres cambiar tu contraseña?</h5>
 <form  action='cambiar_contraseña.php' method='POST'>
   <label>Contraseña antigua: </label><br>
   <input type="password" name="old_pass"><br>
   <label>Contraseña Nueva: </label><br>
   <input type="password" name="new_pass"><br>
   <input class='btn' type='submit' value='Cambiar Contraseña'>
+</form>
+
+<br>
+<br>
+<br>
+
+<h3>Información Relevante.</h3>
+
+<?php if (isset($row3[0][0])) {
+  echo 'Usuario es ADMIN.'
+}
+else {
+  echo 'Usuario no es Admin.'
+}
+?>
+
+<form method="post" action="index.php?">
+  <input type="submit" value="Volver" />
 </form>
