@@ -12,7 +12,7 @@ echo $lista[0];
 echo $lista[1];
 ?>
 
-<form action="comprasp1.php">
-  <p>Tienda: <input type="hidden" name="{$tienda}"></p>
+<form action="comprasp1.php" method="get">
+  <p><input type="hidden" id="custId" name="custId" value="$tienda"></p>
   <p><input type="submit" value="Enviar"></p>
 </form>
