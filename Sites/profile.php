@@ -13,7 +13,7 @@ $result2 = $db -> prepare($query2);
 $result2 -> execute();
 $row2 = $result2 -> fetchAll();
 
-$query3 = "SELECT * FROM administradores WHERE rut_adm = '$uid';";
+$query3 = "SELECT * FROM administradores WHERE rut_adm = '$id';";
 $result3 = $db -> prepare($query3);
 $result3 -> execute();
 $row3 = $result3 -> fetchAll();
