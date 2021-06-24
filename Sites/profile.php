@@ -18,7 +18,7 @@ $result3 = $db -> prepare($query3);
 $result3 -> execute();
 $row3 = $result3 -> fetchAll();
 
-$query4 = "SELECT idunid FROM personal, unidades WHERE pid = idjefe AND rut = '$id'; ";
+$query4 = "SELECT idunid, iddir FROM personal, unidades WHERE pid = idjefe AND rut = '$id'; ";
 $result4 = $db2 -> prepare($query4);
 $result4 -> execute();
 $row4 = $result4 -> fetchAll();
@@ -51,16 +51,33 @@ $row4 = $result4 -> fetchAll();
 
 <h3>Información Relevante.</h3>
 
-<?php if (isset($row3[0][0])) {
-  echo 'Usuario es ADMIN.';
-}
-else {
-  echo 'Usuario no es Admin.';
-}
-?>
-
 <?php if (isset($row4[0][0])) {
   echo 'Usuario es Jefe de Tienda.';
+  $idunid = $row4[0][0];
+  $iddir = $row4[0][1];
+  $query5 = "SELECT * FROM direcciones WHERE iddir = '$iddir'; ";
+  $result5 = $db2 -> prepare($query5);
+  $result5 -> execute()
+  $row5 = $result5 -> fetchAll()
+  ?>
+  <body>
+        <table class='table'>
+            <thead>
+                <tr>
+                <th>ID direccion</th>
+                <th>Dirección</th>
+                </tr>
+            </thead>
+            <tbody>
+              # aqui cosas
+            </tbody>
+        </table>
+        <footer>
+            <p>
+                CONTRASENAS
+            </p>
+        </footer>
+    </body>
 }
 else {
   echo 'Usuario no es jefe.';
