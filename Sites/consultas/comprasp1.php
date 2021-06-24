@@ -8,13 +8,13 @@ echo $id;
     include('../templates/header.html');
 
      // Primero obtenemos los 3 productos más baratos comestibles
-    $query = "SELECT productos.pnombre, productos.precio FROM tienda_vende, productos WHERE tienda_vende.tid = '$id' AND tienda_vende.pid = productos.pid AND productos.ptipo = 'comestible' ORDER BY productos.precio ASC LIMIT 3;";
+    $query = "SELECT DISTINCT productos.pnombre, productos.precio FROM tienda_vende, productos WHERE tienda_vende.tid = '$id' AND tienda_vende.pid = productos.pid AND productos.ptipo = 'comestible' ORDER BY productos.precio ASC LIMIT 3;";
     $result = $db -> prepare($query);
     $result -> execute();
     $resultados= $result -> fetchAll();
 
     // Primero obtenemos los 3 productos más baratos comestibles
-    $query2 = "SELECT productos.pnombre, productos.precio FROM tienda_vende, productos WHERE tienda_vende.tid = '$id' AND tienda_vende.pid = productos.pid AND productos.ptipo = 'no comestible' ORDER BY productos.precio ASC LIMIT 3;";
+    $query2 = "SELECT DISTINCT productos.pnombre, productos.precio FROM tienda_vende, productos WHERE tienda_vende.tid = '$id' AND tienda_vende.pid = productos.pid AND productos.ptipo = 'no comestible' ORDER BY productos.precio ASC LIMIT 3;";
     $result2 = $db -> prepare($query2);
     $result2 -> execute();
     $resultados2 = $result2 -> fetchAll();
