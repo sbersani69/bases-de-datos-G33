@@ -1,5 +1,4 @@
 <?php
-print "<pre>";
-print_r($_REQUEST);
-print "</pre>\n";
+$id = $_POST['infotienda'];
+echo $id;
 ?>
