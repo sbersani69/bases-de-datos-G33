@@ -22,6 +22,7 @@ echo $id;
 ?>
 
 <body>
+<div style="text-align:center;">
         <table class='table'>
             <thead>
                 <tr>
@@ -41,6 +42,7 @@ echo $id;
                 ?>
             </tbody>
         </table>
+</div>
         <footer>
             <p>
                 COMESTIBLES
@@ -49,6 +51,7 @@ echo $id;
     </body>
 
 <body>
+<div style="text-align:center;">
         <table class='table'>
             <thead>
                 <tr>
@@ -68,6 +71,7 @@ echo $id;
                 ?>
             </tbody>
         </table>
+ </div>
         <footer>
             <p>
                 NO COMESTIBLES
