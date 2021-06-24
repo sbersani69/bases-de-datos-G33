@@ -18,6 +18,11 @@ $result3 = $db -> prepare($query3);
 $result3 -> execute();
 $row3 = $result3 -> fetchAll();
 
+$query4 = "SELECT idunid FROM personal, unidades WHERE pid = idjefe AND rut = '$id'; ";
+$result4 = $db2 -> prepare($query4);
+$result4 -> execute();
+$row4 = $result4 -> fetchAll();
+
   ?>
   <h1>Perfil del Usuario</h1>
 
@@ -51,6 +56,14 @@ $row3 = $result3 -> fetchAll();
 }
 else {
   echo 'Usuario no es Admin.';
+}
+?>
+
+<?php if (isset($row4[0][0])) {
+  echo 'Usuario es Jefe de Tienda.';
+}
+else {
+  echo 'Usuario no es jefe.';
 }
 ?>
 
