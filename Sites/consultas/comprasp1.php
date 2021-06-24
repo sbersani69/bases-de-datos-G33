@@ -8,13 +8,13 @@ echo $id;
     include('../templates/header.html');
 
      // Primero obtenemos los 3 productos más baratos comestibles
-    $query = "SELECT DISTINCT productos.pnombre, productos.precio FROM tienda_vende, productos WHERE tienda_vende.tid = '$id' AND tienda_vende.pid = productos.pid AND productos.ptipo = 'comestible' ORDER BY productos.precio ASC LIMIT 3;";
+    $query = "SELECT DISTINCT productos.pid, productos.pnombre, productos.precio FROM tienda_vende, productos WHERE tienda_vende.tid = '$id' AND tienda_vende.pid = productos.pid AND productos.ptipo = 'comestible' ORDER BY productos.precio ASC LIMIT 3;";
     $result = $db -> prepare($query);
     $result -> execute();
     $resultados= $result -> fetchAll();
 
     // Primero obtenemos los 3 productos más baratos comestibles
-    $query2 = "SELECT DISTINCT productos.pnombre, productos.precio FROM tienda_vende, productos WHERE tienda_vende.tid = '$id' AND tienda_vende.pid = productos.pid AND productos.ptipo = 'no comestible' ORDER BY productos.precio ASC LIMIT 3;";
+    $query2 = "SELECT DISTINCT productos.pid, productos.pnombre, productos.precio FROM tienda_vende, productos WHERE tienda_vende.tid = '$id' AND tienda_vende.pid = productos.pid AND productos.ptipo = 'no comestible' ORDER BY productos.precio ASC LIMIT 3;";
     $result2 = $db -> prepare($query2);
     $result2 -> execute();
     $resultados2 = $result2 -> fetchAll();
@@ -25,6 +25,7 @@ echo $id;
         <table class='table'>
             <thead>
                 <tr>
+                <th>ID</th>
                 <th>Nombre del producto comestible</th>
                 <th>Precio</th>
                 </tr>
@@ -33,7 +34,7 @@ echo $id;
                 <?php
                 foreach ($resultados as $r) {
                     echo "<tr>";
-                    for ($i = 0; $i < 3; $i++) {
+                    for ($i = 0; $i < 4; $i++) {
                         echo "<td>$r[$i]</td> ";
                     }
                     echo "</tr>";
@@ -52,6 +53,7 @@ echo $id;
         <table class='table'>
             <thead>
                 <tr>
+                <th>ID</th>
                 <th>Nombre del producto no comestible</th>
                 <th>Precio</th>
                 </tr>
@@ -60,7 +62,7 @@ echo $id;
                 <?php
                 foreach ($resultados2 as $r2) {
                     echo "<tr>";
-                    for ($i = 0; $i < 3; $i++) {
+                    for ($i = 0; $i < 4; $i++) {
                         echo "<td>$r2[$i]</td> ";
                     }
                     echo "</tr>";
