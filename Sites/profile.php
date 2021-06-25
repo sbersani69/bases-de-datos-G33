@@ -67,6 +67,7 @@ $row4 = $result4 -> fetchAll();
   $administradores = $result6 -> fetchAll();
 
   ?>
+  <br>
   <label>Dirección de la Unidad: <?php echo $row5[0][1]; ?></label> <br>
   <label>Comuna de la Unidad : <?php echo $row5[0][2]; ?></label> <br>
 
@@ -81,7 +82,7 @@ $row4 = $result4 -> fetchAll();
             </thead>
             <tbody>
                 <?php
-                foreach ($adminisitradores as $admin) {
+                foreach ($administradores as $admin) {
                     echo "<tr>";
                     for ($i = 0; $i < 2; $i++) {
                         echo "<td>$admin[$i]</td> ";
