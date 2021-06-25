@@ -36,7 +36,7 @@ $row4 = $result4 -> fetchAll();
 
 <h5>¿Quieres cambiar tu contraseña?</h5>
 <form  action='cambiar_contraseña.php' method='POST'>
-  <label>Contraseña antigua: </label><br>
+  <label>Contraseña Antigua: </label><br>
   <input type="password" name="old_pass"><br>
   <label>Contraseña Nueva: </label><br>
   <input type="password" name="new_pass"><br>
@@ -48,7 +48,7 @@ $row4 = $result4 -> fetchAll();
 <h3>Información Relevante.</h3>
 
 <?php if (isset($row4[0][0])) {
-  echo 'Usuario es Jefe de Tienda.';
+  echo 'Usuario es Jefe de una Unidad de Despacho.';
   $idunid = $row4[0][0];
   $iddir = $row4[0][1];
   $query5 = "SELECT * FROM direcciones WHERE iddir = '$iddir'; ";
