@@ -33,8 +33,6 @@ $row4 = $result4 -> fetchAll();
   <label>Dirección: <?php echo $row2[0][0]; ?></label> <br>
 
 <br>
-<br>
-<br>
 
 <h5>¿Quieres cambiar tu contraseña?</h5>
 <form  action='cambiar_contraseña.php' method='POST'>
@@ -45,8 +43,6 @@ $row4 = $result4 -> fetchAll();
   <input class='btn' type='submit' value='Cambiar Contraseña'>
 </form>
 
-<br>
-<br>
 <br>
 
 <h3>Información Relevante.</h3>
