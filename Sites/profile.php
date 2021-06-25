@@ -59,25 +59,40 @@ $row4 = $result4 -> fetchAll();
   $result5 = $db2 -> prepare($query5);
   $result5 -> execute()
   $row5 = $result5 -> fetchAll()
+
+  $query6 = "SELECT personal.rut, nombre FROM administradoresytrabajadores, personal WHERE idunid = '$idunid' AND
+  personal.rut = administradoresytrabajadores.rut AND clasificacion = 'administracion'; ";
+  $result6 = $db2 -> prepare($query6);
+  $result6 -> execute();
+  $administradores = $result6 -> fetchAll();
+
   ?>
+  <label>Dirección de la Unidad: <?php echo $row5[0][1]; ?></label> <br>
+  <label>Comuna de la Unidad : <?php echo $row5[0][2]; ?></label> <br>
+
+  <h4>Administradores de esta Unidad:</h4>
   <body>
         <table class='table'>
             <thead>
                 <tr>
-                <th>ID direccion</th>
-                <th>Dirección</th>
+                <th>RUT</th>
+                <th>Nombre</th>
                 </tr>
             </thead>
             <tbody>
-              # aqui cosas
+                <?php
+                foreach ($adminisitradores as $admin) {
+                    echo "<tr>";
+                    for ($i = 0; $i < 2; $i++) {
+                        echo "<td>$admin[$i]</td> ";
+                    }
+                    echo "</tr>";
+                }
+                ?>
             </tbody>
         </table>
-        <footer>
-            <p>
-                CONTRASENAS
-            </p>
-        </footer>
     </body>
+<?php
 }
 else {
   echo 'Usuario no es jefe.';
