@@ -22,3 +22,7 @@
     $resultados = $result -> fetchAll();
     print_r($resultados);
     ?>
+
+    echo "$resultados[0]";
+    echo "$resultados";
+    echo "$resultados[1]";
