@@ -20,5 +20,9 @@
 
     // Si nos interesa acceder a los booleanos que retorna el procedimiento, debemos hacer fetch de los resultados
     $resultados = $result -> fetchAll();
-    print "Esto es {$resultados} !";
+    print_r($resultados);
+    foreach($resultados as $resultado){
+    echo $resultado . "\n";
+    }
+    var_dump($resultados);
     ?>
