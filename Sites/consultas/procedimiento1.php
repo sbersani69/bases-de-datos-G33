@@ -5,7 +5,7 @@
     include('../templates/header.html');
 
      // Primero obtenemos todos el personal administrativo que queremos agregar
-    $query = "SELECT Personal.nombre, AdministradoresYTrabajadores.rut, Personal.edad, Personal.sexo, Unidades.iddir  FROM AdministradoresYTrabajadores, Personal, Unidades WHERE Personal.rut = AdministradoresYTrabajadores.rut AND AdministradoresYTrabajadores.clasificacion = 'administracion' AND Unidades.idunid = AdministradoresYTrabajadores.idunid;";
+    $query = "SELECT Personal.nombre, AdministradoresYTrabajadores.rut, Personal.edad, Personal.sexo, Unidades.iddir  FROM AdministradoresYTrabajadores, Personal, Unidades WHERE Personal.rut = AdministradoresYTrabajadores.rut AND Unidades.idunid = AdministradoresYTrabajadores.idunid;";
     $result = $db2 -> prepare($query);
     $result -> execute();
     $usuarios_administracion = $result -> fetchAll();
