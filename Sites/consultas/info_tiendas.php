@@ -38,7 +38,7 @@ echo $lista[1];
     $result -> execute();
     $productos = $result -> fetchAll();
     ?>
-    <form method="post" action="./consultas/procedimiento_compras.php">
+    <form method="post" action="procedimiento_compras.php">
     <select name="Producto">
     <?php
 
