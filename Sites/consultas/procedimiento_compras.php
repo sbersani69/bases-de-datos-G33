@@ -20,7 +20,8 @@
 
     // Si nos interesa acceder a los booleanos que retorna el procedimiento, debemos hacer fetch de los resultados
     $resultados = $result -> fetchAll();
-    print_r($resultados);
+    print_r($resultados[0]);
+    print_r($resultados[1]);
     ?>
 
     <?php if ($resultados == 1) {
