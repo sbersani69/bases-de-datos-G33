@@ -23,6 +23,6 @@
     print_r($resultados);
     ?>
 
-    echo "$resultados[0]";
-    echo "$resultados";
-    echo "$resultados[1]";
+    <?php if (isset($resultados[0][0])) {
+    echo 'Producto si está en stock';
+    ?>
