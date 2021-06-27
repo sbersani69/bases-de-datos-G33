@@ -23,7 +23,22 @@
     print_r($resultados);
     ?>
 
-    <?php if (isset($resultados) == TRUE) {
+    <?php if ($resultados == 1) {
+    echo 'Producto si está en stock';
+    }
+    ?>
+
+    <?php if ($resultados == TRUE) {
+    echo 'Producto si está en stock';
+    }
+    ?>
+
+    <?php if ($resultados == "1") {
+    echo 'Producto si está en stock';
+    }
+    ?>
+
+    <?php if ($resultados == "t") {
     echo 'Producto si está en stock';
     }
     ?>
