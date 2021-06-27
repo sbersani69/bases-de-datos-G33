@@ -20,6 +20,5 @@
 
     // Si nos interesa acceder a los booleanos que retorna el procedimiento, debemos hacer fetch de los resultados
     $resultados = $result -> fetchAll();
+    print_r($resultado);
     ?>
-
-    echo "$resultados";
