@@ -20,25 +20,5 @@
 
     // Si nos interesa acceder a los booleanos que retorna el procedimiento, debemos hacer fetch de los resultados
     $resultados = $result -> fetchAll();
-    print($resultados);
-    ?>
-
-    <?php if ($resultados == 1) {
-    echo 'Producto si está en stock';
-    }
-    echo '{$resultados}';
-    ?>
-    <?php if ($resultados == TRUE) {
-    echo 'Producto si está en stock';
-    }
-    ?>
-
-    <?php if ($resultados == "1") {
-    echo 'Producto si está en stock';
-    }
-    ?>
-
-    <?php if ($resultados == "t") {
-    echo 'Producto si está en stock';
-    }
+    print "Esto es {$resultados['verificar_tiendaproducto']} !";
     ?>
