@@ -20,7 +20,7 @@
 
     // Si nos interesa acceder a los booleanos que retorna el procedimiento, debemos hacer fetch de los resultados
     $resultados = $result -> fetchAll();
-    foreach ($resultados[0] as $key => $value) {
+    $resultados[0][0] as $key => $value {
     echo "$key = $value\n";
     }
     ?>
