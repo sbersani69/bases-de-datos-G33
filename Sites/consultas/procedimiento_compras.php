@@ -1,5 +1,5 @@
 
-<?php
+    <?php
 
     // Nos conectamos a las bdds
     require("../config/conexion.php");
@@ -25,4 +25,5 @@
 
     <?php if (isset($resultados[0][0])) {
     echo 'Producto si está en stock';
+    }
     ?>
