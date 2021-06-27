@@ -27,8 +27,8 @@
     <?php if ($resultados == 1) {
     echo 'Producto si está en stock';
     }
+    echo '{$resultados}';
     ?>
-
     <?php if ($resultados == TRUE) {
     echo 'Producto si está en stock';
     }
