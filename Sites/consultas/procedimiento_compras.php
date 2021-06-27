@@ -20,9 +20,9 @@
 
     // Si nos interesa acceder a los booleanos que retorna el procedimiento, debemos hacer fetch de los resultados
     $resultados = $result -> fetchAll();
-    print_r($resultados);
+    print_r($resultados[0]['verificar_tiendaproducto']);<br>
     foreach($resultados as $resultado){
     echo $resultado . "\n";
-    }
+    }<br>
     var_dump($resultados);
     ?>
