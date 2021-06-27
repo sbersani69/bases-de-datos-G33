@@ -4,7 +4,7 @@
     // Nos conectamos a las bdds
     require("../config/conexion.php");
     include('../templates/header.html');
-
+    ?>
     <?php
     $producto = $_POST['Producto'];
     $lista = explode(":", $producto);
