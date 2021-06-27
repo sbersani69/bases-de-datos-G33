@@ -17,12 +17,15 @@
     $result = $db -> prepare($query);
     $result -> execute();
 
-
+    $vale = "No esta en stock"
+    
     // Si nos interesa acceder a los booleanos que retorna el procedimiento, debemos hacer fetch de los resultados
     $resultados = $result -> fetchAll();
     foreach ($resultados[0] as $key => $value) {
     echo "$key = $value\n";
+    if($value == 1){
+        $vale = 'Si esta en stock';
+        }
     }
-    echo "$resultados[0][0]";
-    echo "$resultados[0]['verificar_tiendaproducto']";
+    echo "$vale";
     ?>
