@@ -20,7 +20,9 @@
 
     // Si nos interesa acceder a los booleanos que retorna el procedimiento, debemos hacer fetch de los resultados
     $resultados = $result -> fetchAll();
-    $resultados[0][0] as $key => $value {
+    foreach ($resultados[0] as $key => $value) {
     echo "$key = $value\n";
     }
+    echo "$resultados[0][0]";
+    echo "$resultados[0]['verificar_tiendaproducto']";
     ?>
