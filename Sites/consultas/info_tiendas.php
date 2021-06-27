@@ -33,7 +33,7 @@ echo $lista[1];
 <h3 align="center"> COMPRAR </h3>
 
     <?php
-    $query = "SELECT productos.pid, productos.pnombre FROM productos, tienda_vende WHERE tienda_vende.pid = productos.pid AND tienda_vende.tid = '<?php echo $lista[0]; ?>' ORDER BY pid;";
+    $query = "SELECT productos.pid, productos.pnombre FROM productos, tienda_vende WHERE tienda_vende.pid = productos.pid AND tienda_vende.tid = '$lista[0]' ORDER BY pid;";
     $result = $db -> prepare($query);
     $result -> execute();
     $productos = $result -> fetchAll();
