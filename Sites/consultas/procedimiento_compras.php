@@ -20,7 +20,7 @@
 
     // Si nos interesa acceder a los booleanos que retorna el procedimiento, debemos hacer fetch de los resultados
     $resultados = $result -> fetchAll();
-    print_r($resultados['verificar_tiendaproducto']);
+    print($resultados);
     ?>
 
     <?php if ($resultados == 1) {
