@@ -21,5 +21,4 @@
     // Si nos interesa acceder a los booleanos que retorna el procedimiento, debemos hacer fetch de los resultados
     $resultados = $result -> fetchAll();
     echo $resultados[0]['verificar_tiendaproducto'];
-    echo '$resultados[0]['verificar_tiendaproducto']';
     ?>
