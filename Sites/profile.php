@@ -56,8 +56,8 @@ $row4 = $result4 -> fetchAll();
   $result5 -> execute();
   $row5 = $result5 -> fetchAll();
 
-  $query6 = "SELECT personal.rut, nombre FROM administradoresytrabajadores, personal WHERE idunid = '$idunid' AND
-  personal.rut = administradoresytrabajadores.rut; ";
+  $query6 = "SELECT personal.rut, nombre, clasificacion FROM administradoresytrabajadores, personal WHERE idunid = '$idunid' AND
+  personal.rut = administradoresytrabajadores.rut; AND NOT clasificacion = 'administracion'";
   $result6 = $db2 -> prepare($query6);
   $result6 -> execute();
   $administradores = $result6 -> fetchAll();
@@ -74,13 +74,14 @@ $row4 = $result4 -> fetchAll();
                 <tr>
                 <th>RUT</th>
                 <th>Nombre</th>
+                <th>Cargo</th>
                 </tr>
             </thead>
             <tbody>
                 <?php
                 foreach ($administradores as $admin) {
                     echo "<tr>";
-                    for ($i = 0; $i < 2; $i++) {
+                    for ($i = 0; $i < 3; $i++) {
                         echo "<td>$admin[$i]</td> ";
                     }
                     echo "</tr>";
