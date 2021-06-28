@@ -93,7 +93,37 @@ $row4 = $result4 -> fetchAll();
 <?php
 }
 else {
-  echo 'Usuario no es jefe.';
+  $query7 = "SELECT compras.cid, pnombre, cantidad, precio, pdescripcion FROM compras, productos_compra, productos WHERE uid = '$uid' AND compras.cid = productos_compra.cid AND productos.pid = productos_compra.pid; ORDER BY compras.cid";
+  $result7 = $db -> prepare($query7);
+  $result7 -> execute();
+  $historial = $result7 -> fetchAll();
+  ?>
+  <h4>Historial de Compras:</h4>
+  <body>
+        <table class='table'>
+            <thead>
+                <tr>
+                <th>ID compra</th>
+                <th>Nombre Producto</th>
+                <th>Cantidad</th>
+                <th>Precio</th>
+                <th>Descripción</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php
+                foreach ($historial as $compra) {
+                    echo "<tr>";
+                    for ($i = 0; $i < 5; $i++) {
+                        echo "<td>$compra[$i]</td> ";
+                    }
+                    echo "</tr>";
+                }
+                ?>
+            </tbody>
+        </table>
+    </body>
+<?php
 }
 ?>
 
