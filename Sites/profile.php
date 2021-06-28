@@ -57,7 +57,7 @@ $row4 = $result4 -> fetchAll();
   $row5 = $result5 -> fetchAll();
 
   $query6 = "SELECT personal.rut, nombre FROM administradoresytrabajadores, personal WHERE idunid = '$idunid' AND
-  personal.rut = administradoresytrabajadores.rut AND clasificacion = 'administracion'; ";
+  personal.rut = administradoresytrabajadores.rut AND NOT clasificacion = 'administracion'; ";
   $result6 = $db2 -> prepare($query6);
   $result6 -> execute();
   $administradores = $result6 -> fetchAll();
@@ -67,7 +67,7 @@ $row4 = $result4 -> fetchAll();
   <label>Dirección de la Unidad: <?php echo $row5[0][1]; ?></label> <br>
   <label>Comuna de la Unidad : <?php echo $row5[0][2]; ?></label> <br>
 
-  <h4>Administradores de esta Unidad:</h4>
+  <h4>Administrativos de esta Unidad:</h4>
   <body>
         <table class='table'>
             <thead>
