@@ -49,15 +49,15 @@ $row4 = $result4 -> fetchAll();
 
 <?php if (isset($row4[0][0])) {
   echo 'Usuario es Jefe de una Unidad de Despacho.';
-  $idunid = $row4[0][0];
-  $iddir = $row4[0][1];
+  $idunid = intval($row4[0][0]);
+  $iddir = intval($row4[0][1]);
   $query5 = "SELECT * FROM direcciones WHERE iddir = '$iddir'; ";
   $result5 = $db2 -> prepare($query5);
   $result5 -> execute();
   $row5 = $result5 -> fetchAll();
 
   $query6 = "SELECT personal.rut, nombre, clasificacion FROM administradoresytrabajadores, personal WHERE idunid = '$idunid' AND
-  personal.rut = administradoresytrabajadores.rut; AND NOT clasificacion = 'administracion'";
+  personal.rut = administradoresytrabajadores.rut AND NOT clasificacion = 'administracion'";
   $result6 = $db2 -> prepare($query6);
   $result6 -> execute();
   $administradores = $result6 -> fetchAll();
