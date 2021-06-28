@@ -6,7 +6,7 @@ $query= "SELECT * FROM usuarios where rut='$id'";
 $result = $db -> prepare($query);
 $result -> execute();
 $row= $result -> fetchAll();
-$uid = $row[0][0];
+$uid = intval($row[0][0]);
 
 $query2 = "SELECT direccion FROM direcciones, direcciones_asociadas WHERE direcciones.did = direcciones_asociadas.did AND direcciones_asociadas.uid = '$uid';";
 $result2 = $db -> prepare($query2);
@@ -93,7 +93,7 @@ $row4 = $result4 -> fetchAll();
 <?php
 }
 else {
-  $query7 = "SELECT compras.cid, pnombre, cantidad, precio, pdescripcion FROM compras, productos_compra, productos WHERE uid = '$uid' AND compras.cid = productos_compra.cid AND productos.pid = productos_compra.pid; ORDER BY compras.cid";
+  $query7 = "SELECT compras.cid, pnombre, cantidad, precio, pdescripcion FROM compras, productos_compra, productos WHERE uid = '$uid' AND compras.cid = productos_compra.cid AND productos.pid = productos_compra.pid ORDER BY compras.cid;";
   $result7 = $db -> prepare($query7);
   $result7 -> execute();
   $historial = $result7 -> fetchAll();
