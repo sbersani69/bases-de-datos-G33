@@ -57,7 +57,7 @@ $row4 = $result4 -> fetchAll();
   $row5 = $result5 -> fetchAll();
 
   $query6 = "SELECT personal.rut, nombre FROM administradoresytrabajadores, personal WHERE idunid = '$idunid' AND
-  personal.rut = administradoresytrabajadores.rut AND NOT clasificacion = 'administracion'; ";
+  personal.rut = administradoresytrabajadores.rut; ";
   $result6 = $db2 -> prepare($query6);
   $result6 -> execute();
   $administradores = $result6 -> fetchAll();
