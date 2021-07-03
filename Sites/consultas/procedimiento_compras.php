@@ -47,4 +47,5 @@
         echo "Tienda no tiene despacho a la direccion del usuario";
     } else {
         echo "Se sigue con el paso 3";
-     ?>
+        }
+    ?>
