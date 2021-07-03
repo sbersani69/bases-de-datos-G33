@@ -62,10 +62,9 @@ footer{
     border-collapse: collapse;
     font-size: 0.9em;
     min-width: 400px;
-}
-
-.table-center{
-  margin: auto;
+    position:relative;
+    margin:auto;
+    width:100%;
 }
 
 .table thead tr {
