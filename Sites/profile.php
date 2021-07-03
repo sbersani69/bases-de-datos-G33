@@ -93,7 +93,7 @@ $row4 = $result4 -> fetchAll();
 <?php
 }
 else {
-  $query7 = "SELECT compras.cid, pnombre, cantidad, precio, pdescripcion FROM compras, productos_compra, productos WHERE uid = '$uid' AND compras.cid = productos_compra.cid AND productos.pid = productos_compra.pid ORDER BY compras.cid;";
+  $query7 = "SELECT compras.cid, pnombre, cantidad, precio, pdescripcion, productos.pid FROM compras, productos_compra, productos WHERE uid = '$uid' AND compras.cid = productos_compra.cid AND productos.pid = productos_compra.pid ORDER BY compras.cid;";
   $result7 = $db -> prepare($query7);
   $result7 -> execute();
   $historial = $result7 -> fetchAll();
@@ -123,6 +123,17 @@ else {
             </tbody>
         </table>
     </body>
+    <form method="post" action="./consultas/pagina_productos.php">
+    <select name="Producto">
+    <?php
+
+    foreach ($historial as $R){
+	echo "<option>{$R[5]}: {$R[1]}</option>";
+    }
+    ?>
+    </select><br>
+    <input type="submit" value="Ver características del producto" />
+    </form>
 <?php
 }
 ?>
