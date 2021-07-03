@@ -32,7 +32,8 @@
     } else {
     echo "Se sigue con el paso 2";
     echo "{$_SESSION['rut']}";
-    $query2 = "SELECT verificar_comunausuario('$_SESSION['rut']', '$id');";
+    $ruti = $_SESSION['rut'];
+    $query2 = "SELECT verificar_comunausuario('$ruti', '$id');";
     $result2 = $db -> prepare($query2);
     $result2 -> execute();
     }
