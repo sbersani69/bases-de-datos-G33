@@ -8,7 +8,7 @@
 <?php
 $tienda = $_POST['Tienda'];
 $lista = explode(":", $tienda);
-<h3 align="center"> Tienda: {$lista[1]} con id: {$lista[0]} </h3>
+<h3 align="center"> "Tienda: {$lista[1]} con id: {$lista[0]}" </h3>
 ?>
   <form align="center" action="comprasp1.php" method="post">
   <p><input type="hidden" name="infotienda" value="<?php echo $lista[0]; ?>"></p>
