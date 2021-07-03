@@ -47,6 +47,18 @@
         </footer>
     </body>
 
+<form method="post" action="pagina_productos.php">
+    <select name="Producto">
+    <?php
+
+    foreach ($resultados as $R){
+	echo "<option>{$R[0]}: {$R[1]}</option>";
+    }
+    ?>
+    </select><br>
+    <input type="submit" value="Ver características del producto" />
+    </form>
+
 <?php include('../templates/footer.html'); ?>
 
 </html>

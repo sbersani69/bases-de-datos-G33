@@ -92,6 +92,18 @@ $id = $_POST['infotienda'];
         </footer>
     </body>
 
+<form method="post" action="pagina_productos.php">
+    <select name="Producto">
+    <?php
+
+    foreach ($resultados2 as $R2){
+	echo "<option>{$R2[0]}: {$R2[1]}</option>";
+    }
+    ?>
+    </select><br>
+    <input type="submit" value="Ver características del producto" />
+    </form>
+
 
 <?php include('../templates/footer.html'); ?>
 
