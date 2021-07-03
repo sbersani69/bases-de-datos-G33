@@ -50,7 +50,6 @@ $id = $_POST['infotienda'];
         </footer>
     </body>
 
-<?php
     <form method="post" action="pagina_productos.php">
     <select name="Producto">
     <?php
@@ -62,7 +61,6 @@ $id = $_POST['infotienda'];
     </select><br>
     <input type="submit" value="Ver características del producto" />
     </form>
-?>
 
 <body>
         <div style="text-align:center;">
