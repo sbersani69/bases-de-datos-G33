@@ -2,6 +2,7 @@
     <?php
 
     // Nos conectamos a las bdds
+    session_start();
     require("../config/conexion.php");
     include('../templates/header.html');
     ?>
@@ -32,5 +33,6 @@
         echo "Tienda no vende el producto";
     } else {
     echo "Se sigue con el paso 2";
+    echo "{$_SESSION['rut']}";
     }
     ?>

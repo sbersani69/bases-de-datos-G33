@@ -18,7 +18,7 @@ $lista = explode(":", $tienda);
   <br>
   <br>
 
-<h3 align="center"> PARTE 2 </h3>
+<h3 align="center"> BÚSQUEDA DE PRODUCTOS </h3>
 
 	<form align="center" action="comprasp2.php" method="post">
 		Nombre_Producto:
@@ -28,7 +28,7 @@ $lista = explode(":", $tienda);
     <input type="submit" value="Consultar productos vendidos">
   	</form>
 
-<h3 align="center"> COMPRAR </h3>
+<h3 align="center"> COMPRAR PRODUCTO </h3>
 
     <?php
     $query = "SELECT productos.pid, productos.pnombre FROM productos ORDER BY pid;";
