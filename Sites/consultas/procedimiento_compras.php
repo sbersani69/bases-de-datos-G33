@@ -26,5 +26,13 @@
         $vale = 'Si esta en stock';
         }
     }
-    echo "$vale";
+    ?>
+
+    <?php
+    if($vale == "No esta en stock"){
+        print("Tienda no vende el producto")
+        }
+    else {
+    echo "Se sigue con el paso 2";
+    }
     ?>
