@@ -1,8 +1,6 @@
-
-    <?php
-
-    // Nos conectamos a las bdds
+<?php
     session_start();
+    // Nos conectamos a las bdds
     require("../config/conexion.php");
     include('../templates/header.html');
     ?>
@@ -34,5 +32,10 @@
     } else {
     echo "Se sigue con el paso 2";
     echo "{$_SESSION['rut']}";
+         <?php
+         $query2 = "SELECT verificar_comunausuario('$_SESSION['rut']', '$id');";
+         $result2 = $db -> prepare($query2);
+         $result2 -> execute();
+         ?>
     }
     ?>
