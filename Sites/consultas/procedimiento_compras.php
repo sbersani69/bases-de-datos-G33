@@ -41,11 +41,9 @@
                 $vale2 = 'Compra disponible';
             }
         }
-    ?>
-    <?php
     if ($vale2 == "Compra no puede proceder") {
         echo "Tienda no tiene despacho a la direccion del usuario";
     } else {
         echo "Se sigue con el paso 3";
         }
-    ?>
+    ?> 
