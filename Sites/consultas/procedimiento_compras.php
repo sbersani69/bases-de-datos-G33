@@ -7,8 +7,6 @@
     <?php
     $producto = $_POST['Producto'];
     $lista = explode(":", $producto);
-    echo $lista[0];
-    echo $lista[1];
     $id = $_POST['infotienda'];
     // Enviamos del post la informacion a la query con nuestro procedimiento almacenado que realizará
     // las verificaciones correspondientes
@@ -30,11 +28,23 @@
     if ($vale == "No esta en stock") {
         echo "Tienda no vende el producto";
     } else {
-    echo "Se sigue con el paso 2";
-    echo "{$_SESSION['rut']}";
-    $ruti = $_SESSION['rut'];
-    $query2 = "SELECT verificar_comunausuario('$ruti', '$id');";
-    $result2 = $db -> prepare($query2);
-    $result2 -> execute();
-    }
+        echo "Se sigue con el paso 2";
+        echo "{$_SESSION['rut']}";
+        $ruti = $_SESSION['rut'];
+        $query2 = "SELECT verificar_comunausuario('$ruti', '$id');";
+        $result2 = $db -> prepare($query2);
+        $result2 -> execute();
+        $vale2 = "Compra no puede proceder";
+        $result2 = $result2 -> fetchAll();
+        foreach ($result2[0] as $key => $value) {
+            if($value == 1){
+                $vale2 = 'Compra disponible';
+            }
+        }
     ?>
+    <?php
+    if ($vale2 == "Compra no puede proceder") {
+        echo "Tienda no tiene despacho a la direccion del usuario";
+    } else {
+        echo "Se sigue con el paso 3";
+     ?>
