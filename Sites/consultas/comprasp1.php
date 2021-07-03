@@ -50,6 +50,20 @@ $id = $_POST['infotienda'];
         </footer>
     </body>
 
+<?php
+    <form method="post" action="./consultas/pagina_productos.php">
+    <select name="Producto">
+    <?php
+
+    foreach ($resultados as $R){
+	echo "<option>{$R[0]}: {$R[1]}</option>";
+    }
+    ?>
+    </select><br>
+    <input type="submit" value="Ver características del producto" />
+    </form>
+?>
+
 <body>
         <div style="text-align:center;">
 	        <table class='table' border="1" style="margin: 0 auto;">
