@@ -26,9 +26,7 @@
         $vale = 'Si esta en stock';
         }
     }
-    if ($vale == "No esta en stock"){
-        echo "$vale";
-        }
+    echo "$vale";
     ?>
 
     <form align="center" action="info_tiendas.php" method="post">
