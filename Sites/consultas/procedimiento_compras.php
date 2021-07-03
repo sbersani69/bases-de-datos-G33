@@ -27,12 +27,10 @@
         }
     }
     ?>
-
     <?php
-    if($vale == "No esta en stock"){
-        print("Tienda no vende el producto")
-        }
-    else {
+    if ($vale == "No esta en stock") {
+        echo "Tienda no vende el producto";
+    } else {
     echo "Se sigue con el paso 2";
     }
     ?>
