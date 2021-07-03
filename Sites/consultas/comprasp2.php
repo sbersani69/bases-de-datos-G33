@@ -17,7 +17,7 @@
 
 
 <body>
-        <table class='table'>
+        <table class='table' align="center" >
             <thead>
                 <tr>
                 <th>ID</th>
@@ -45,6 +45,7 @@
         </footer>
     </body>
 
-<?php include('../templates/footer.html'); ?>
+<form align="center" action="info_tiendas.php" method="post">
+        <p><input type="submit" value="Volver"></p>
 
 </html>

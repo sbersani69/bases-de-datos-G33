@@ -1,6 +1,5 @@
 <?php
 $id = $_POST['infotienda'];
-echo $id;
 
 
 // Nos conectamos a las bdds
@@ -22,7 +21,7 @@ echo $id;
 ?>
 
 <body>
-        <table class='table'>
+        <table class='table' align="center">
             <thead>
                 <tr>
                 <th>ID</th>
@@ -50,7 +49,7 @@ echo $id;
     </body>
 
 <body>
-        <table class='table'>
+        <table class='table' align="center">
             <thead>
                 <tr>
                 <th>ID</th>
@@ -78,6 +77,7 @@ echo $id;
     </body>
 
 
-<?php include('../templates/footer.html'); ?>
+<form align="center" action="info_tiendas.php" method="post">
+        <p><input type="submit" value="Volver"></p>
 
 </html>

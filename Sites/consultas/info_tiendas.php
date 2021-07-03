@@ -13,7 +13,7 @@ echo $lista[1];
 ?>
   <form align="center" action="comprasp1.php" method="post">
   <p><input type="hidden" name="infotienda" value="<?php echo $lista[0]; ?>"></p>
-  <p><input type="submit" value="Enviar"></p>
+  <p><input type="submit" value="Productos más baratos"></p>
 </form>
 
   <br>

@@ -28,7 +28,8 @@
     }
     if ($vale == "No esta en stock"){
         echo "$vale";
-        <form align="center" action="info_tiendas.php" method="post">
-        <p><input type="submit" value="Volver"></p>
         }
     ?>
+
+    <form align="center" action="info_tiendas.php" method="post">
+    <p><input type="submit" value="Volver"></p>
