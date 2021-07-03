@@ -21,7 +21,8 @@ $id = $_POST['infotienda'];
 ?>
 
 <body>
-        <table class='table'>
+        <div style="text-align:center;">
+	        <table class='table' border="1" style="margin: 0 auto;">
             <thead>
                 <tr>
                 <th>ID</th>
@@ -41,6 +42,7 @@ $id = $_POST['infotienda'];
                 ?>
             </tbody>
         </table>
+    </div>
         <footer>
             <p>
                 COMESTIBLES
@@ -49,7 +51,8 @@ $id = $_POST['infotienda'];
     </body>
 
 <body>
-        <table class='table'>
+        <div style="text-align:center;">
+	        <table class='table' border="1" style="margin: 0 auto;">
             <thead>
                 <tr>
                 <th>ID</th>
@@ -69,6 +72,7 @@ $id = $_POST['infotienda'];
                 ?>
             </tbody>
         </table>
+    </div>
         <footer>
             <p>
                 NO COMESTIBLES

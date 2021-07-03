@@ -17,7 +17,8 @@
 
 
 <body>
-        <table class='table'>
+        <div style="text-align:center;">
+	        <table class='table' border="1" style="margin: 0 auto;">
             <thead>
                 <tr>
                 <th>ID</th>
@@ -38,6 +39,7 @@
                 ?>
             </tbody>
         </table>
+    </div>
         <footer>
             <p>
                 Búsqueda Producto
