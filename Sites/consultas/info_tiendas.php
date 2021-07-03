@@ -11,9 +11,10 @@ $lista = explode(":", $tienda);
 echo $lista[0];
 echo $lista[1];
 ?>
-  <form align="center" action="comprasp1.php" method="post">
+
+<form action="comprasp1.php" method="POST">
   <p><input type="hidden" name="infotienda" value="<?php echo $lista[0]; ?>"></p>
-  <p><input type="submit" value="Productos más baratos"></p>
+  <p><input type="submit" value="Enviar"></p>
 </form>
 
   <br>
@@ -37,7 +38,7 @@ echo $lista[1];
     $result -> execute();
     $productos = $result -> fetchAll();
     ?>
-    <form align="center" action="procedimiento_compras.php" method="post">
+    <form method="post" action="procedimiento_compras.php">
     <select name="Producto">
     <?php
 

@@ -22,12 +22,9 @@
     // Si nos interesa acceder a los booleanos que retorna el procedimiento, debemos hacer fetch de los resultados
     $resultados = $result -> fetchAll();
     foreach ($resultados[0] as $key => $value) {
-        if($value == 1){
-            $vale = 'Si esta en stock';
-            }
+    if($value == 1){
+        $vale = 'Si esta en stock';
         }
+    }
     echo "$vale";
     ?>
-
-    <form align="center" action="info_tiendas.php" method="post">
-    <p><input type="submit" value="Volver"></p>

@@ -17,8 +17,7 @@
 
 
 <body>
-         <div style="text-align:center;">
-        <table class='table' align="center" >
+        <table class='table'>
             <thead>
                 <tr>
                 <th>ID</th>
@@ -39,7 +38,6 @@
                 ?>
             </tbody>
         </table>
-    </div>
         <footer>
             <p>
                 Búsqueda Producto
@@ -47,7 +45,6 @@
         </footer>
     </body>
 
-<form align="center" action="info_tiendas.php" method="post">
-        <p><input type="submit" value="Volver"></p>
+<?php include('../templates/footer.html'); ?>
 
 </html>
