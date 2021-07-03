@@ -22,7 +22,7 @@ $id = $_POST['infotienda'];
 
 <body>
        <div style="text-align:center;">
-	        <table border="1" style="margin: 0 auto;">
+        <table class='table' align="center" >
             <thead>
                 <tr>
                 <th>ID</th>
@@ -52,7 +52,7 @@ $id = $_POST['infotienda'];
 
 <body>
         <div style="text-align:center;">
-	        <table border="1" style="margin: 0 auto;">
+        <table class='table' align="center" >
             <thead>
                 <tr>
                 <th>ID</th>

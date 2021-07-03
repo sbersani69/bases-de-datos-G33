@@ -17,6 +17,7 @@
 
 
 <body>
+         <div style="text-align:center;">
         <table class='table' align="center" >
             <thead>
                 <tr>
@@ -38,6 +39,7 @@
                 ?>
             </tbody>
         </table>
+    </div>
         <footer>
             <p>
                 Búsqueda Producto
