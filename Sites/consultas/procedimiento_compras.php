@@ -30,7 +30,7 @@
     } else {
         echo "Se sigue con el paso 2";
         $ruti = $_SESSION['rut'];
-        $query2 = "SELECT verificar_comunausuario('$lista2[0]', 0);";
+        $query2 = "SELECT verificar_comunausuario(619, '$id');";
         $result2 = $db -> prepare($query2);
         $result2 -> execute();
         $vale2 = "Compra no puede proceder";
