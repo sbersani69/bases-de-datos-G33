@@ -44,6 +44,9 @@
     if ($vale2 == 'Compra no puede proceder') {
         echo "Tienda no tiene despacho a la direccion del usuario";
     } elseif ($vale2 == 'Compra se puede') {
-        echo "Compra puede ser realizada FALTA ACÁ";
+        echo "Compra puede ser realizada";
+        // paso 3
     }
     ?>
+
+<?php include('../templates/footer.html'); ?>
