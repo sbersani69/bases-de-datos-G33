@@ -41,12 +41,12 @@
         echo "{$resultado2[0]}"
         if (is_array($resultado2)) {
             foreach ($resultado2[0] as $key2 => $value2) {
-                if($value2 == 1){
-                    $vale2 = 'Compra disponible';
-                    }
+            if($value2 == 1){
+                $vale2 = 'Compra disponible';
                 }
             }
         }
+    }
     ?>
     <?php
     if ($vale2 == "Compra no puede proceder") {
