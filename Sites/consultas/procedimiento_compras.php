@@ -44,11 +44,12 @@
             }
         }
     }
+    ?>
     <?php
     if ($vale2 == "Compra no puede proceder") {
     echo "Tienda no tiene despacho a la direccion del usuario";
     } else {
-        echo "¡Compra realizada con éxito!";
+        echo "Compra puede ser realizada FALTA ACÁ";
         }
     }
     ?>

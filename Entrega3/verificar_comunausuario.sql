@@ -18,4 +18,3 @@ BEGIN
 -- finalizamos la definición de la función y declaramos el lenguaje
 END
 $$ language plpgsql
-
