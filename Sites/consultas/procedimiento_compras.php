@@ -37,6 +37,8 @@
         $vale2 = "Compra no puede proceder";
         $resultado2 = $result2 -> fetchAll();
         echo "{$resultado2[0][0]}";
+        echo "{$resultado2[0]}";
+        echo "{$resultado2[0][0][0]}";
         if($resultado2[0][0] == 1){
             $vale2 = 'Compre se puede';
         }
