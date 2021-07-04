@@ -8,7 +8,10 @@
     $producto = $_POST['Producto'];
     $lista = explode(":", $producto);
     $direccion = $_POST['Direccion'];
+    echo "{$direccion}";
     $lista2 = explode(":", $direccion);
+    echo "{$lista2[0]}";
+    echo "{$lista2[1]}";
     $id = $_POST['infotienda'];
     // Enviamos del post la informacion a la query con nuestro procedimiento almacenado que realizará
     // las verificaciones correspondientes
