@@ -38,12 +38,14 @@
         $result2 -> execute();
         $vale2 = "Compra no puede proceder";
         $resultado2 = $result2 -> fetchAll();
-        foreach ($resultado2[0] as $key => $value) {
-            if($value == 1){
-                $vale2 = 'Compra disponible';
+        if (is_array($resultado2)) {
+            foreach ($resultado2[0] as $key => $value) {
+                if($value == 1){
+                    $vale2 = 'Compra disponible';
+                    }
+                }
             }
         }
-    }
     ?>
     <?php
     if ($vale2 == "Compra no puede proceder") {
