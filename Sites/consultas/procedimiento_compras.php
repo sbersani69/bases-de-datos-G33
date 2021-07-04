@@ -7,6 +7,8 @@
     <?php
     $producto = $_POST['Producto'];
     $lista = explode(":", $producto);
+    $direccion = $_POST['Direccion'];
+    $lista2 = explode(":", $direccion);
     $id = $_POST['infotienda'];
     // Enviamos del post la informacion a la query con nuestro procedimiento almacenado que realizará
     // las verificaciones correspondientes
@@ -31,7 +33,7 @@
         echo "Se sigue con el paso 2";
         echo "{$_SESSION['rut']}";
         $ruti = $_SESSION['rut'];
-        $query2 = "SELECT verificar_comunausuario('$ruti', '$id');";
+        $query2 = "SELECT verificar_comunausuario('$lista2[0]', '$id');";
         $result2 = $db -> prepare($query2);
         $result2 -> execute();
         $vale2 = "Compra no puede proceder";
@@ -41,10 +43,12 @@
                 $vale2 = 'Compra disponible';
             }
         }
-        if ($vale2 == "Compra no puede proceder") {
-            echo "Tienda no tiene despacho a la direccion del usuario";
-        } else {
-            echo "Se sigue con el paso 3";
+    }
+    <?php
+    if ($vale2 == "Compra no puede proceder") {
+    echo "Tienda no tiene despacho a la direccion del usuario";
+    } else {
+        echo "¡Compra realizada con éxito!";
         }
     }
     ?>

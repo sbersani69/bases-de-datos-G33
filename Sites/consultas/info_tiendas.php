@@ -1,5 +1,5 @@
 <?php
-
+    session_start();
     // Nos conectamos a las bdds
     require("../config/conexion.php");
     include('../templates/header.html');
@@ -35,8 +35,21 @@ $lista = explode(":", $tienda);
     $result = $db -> prepare($query);
     $result -> execute();
     $productos = $result -> fetchAll();
+    $ruti = $_SESSION['rut'];
+    $query2 = "SELECT direcciones.did, direcciones.direccion FROM direcciones, direcciones_asociadas, usuarios WHERE direcciones.did = direcciones_asociadas.did AND direcciones_asociadas.uid = usuarios.uid AND usuarios.rut = '$ruti';";
+    $result2 = $db -> prepare($query2);
+    $result2 -> execute();
+    $direccion = $result2 -> fetchAll();
     ?>
     <form align="center" action="procedimiento_compras.php" method="post">
+    <select name="Direccion">
+    <?php
+
+    foreach ($direccion as $dire){
+	echo "<option>{$dire[0]}: {$dire[1]}</option>";
+    }
+    ?>
+    </select><br>
     <select name="Producto">
     <?php
 
