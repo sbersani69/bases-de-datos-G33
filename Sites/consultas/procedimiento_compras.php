@@ -20,6 +20,7 @@
 
     // Si nos interesa acceder a los booleanos que retorna el procedimiento, debemos hacer fetch de los resultados
     $resultados = $result -> fetchAll();
+    echo "{$resultado[0]}"
     foreach ($resultados[0] as $key => $value) {
     if($value == 1){
         $vale = 'Si esta en stock';
@@ -31,13 +32,13 @@
         echo "Tienda no vende el producto";
     } else {
         echo "Se sigue con el paso 2";
-        echo "{$_SESSION['rut']}";
         $ruti = $_SESSION['rut'];
         $query2 = "SELECT verificar_comunausuario('$lista2[0]', '$id');";
         $result2 = $db -> prepare($query2);
         $result2 -> execute();
         $vale2 = "Compra no puede proceder";
         $resultado2 = $result2 -> fetchAll();
+        echo "{$resultado2[0]}"
         if (is_array($resultado2)) {
             foreach ($resultado2[0] as $key2 => $value2) {
                 if($value2 == 1){
