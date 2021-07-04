@@ -20,9 +20,9 @@
 
     // Si nos interesa acceder a los booleanos que retorna el procedimiento, debemos hacer fetch de los resultados
     $resultados = $result -> fetchAll();
-    echo "{$resultado[0]}";
-    echo "{$resultado[0][0]}";
-    echo "{resultado}";
+    echo "{$resultados[0]}";
+    echo "{$resultados[0][0]}";
+    echo "{$resultados}";
     foreach ($resultados[0] as $key => $value) {
     if($value == 1){
         $vale = 'Si esta en stock';
