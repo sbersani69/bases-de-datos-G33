@@ -17,7 +17,7 @@ BEGIN
     MAX(compras.cid)
     FROM compras;
 
-    IF rut_usuario IN (SELECT usuarios.rut FROM usuarios) THEN
+    IF id_usuario IN (SELECT usuarios.uid FROM usuarios) THEN
         INSERT INTO compras VALUES(idmax+1, id_usuario, id_direccion, id_tienda);
         INSERT INTO productos_compra VALUES(idmax+1, id_producto, 1);
         RETURN TRUE;
