@@ -1,7 +1,7 @@
 CREATE OR REPLACE FUNCTION
 
 -- declaramos la función y sus argumentos
-verificar_comunausuario (id_direccion varchar, id_tienda int)
+verificar_comunausuario (id_direccion int, id_tienda int)
 
 -- declaramos lo que retorna, en este caso un booleano
 RETURNS BOOLEAN AS $$
