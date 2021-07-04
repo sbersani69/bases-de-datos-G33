@@ -28,7 +28,6 @@
     if ($vale == "No esta en stock") {
         echo "Tienda no vende el producto";
     } else {
-        echo "Se sigue con el paso 2";
         $ruti = $_SESSION['rut'];
         $query2 = "SELECT verificar_comunausuario('$lista2[0]', '$id');";
         $result2 = $db -> prepare($query2);
@@ -44,8 +43,17 @@
     if ($vale2 == 'Compra no puede proceder') {
         echo "Tienda no tiene despacho a la direccion del usuario";
     } elseif ($vale2 == 'Compra se puede') {
-        echo "Compra puede ser realizada";
-        // paso 3
+        $ruti = $_SESSION['rut'];
+        $queryp = "SELECT usuarios.uid FROM usuarios WHERE usuarios.rut = '$ruti';";
+        $resultp = $db -> prepare($queryp);
+        $resultp -> execute();
+        $resultadop = $resultp -> fetchAll();
+        $uid = intval($resultadop[0][0]);
+        $query3 = "SELECT compra_a_realizar('uid', '$id', '$lista2[0]', '$lista[0]');";
+        $result3 = $db -> prepare($query3);
+        $result3 -> execute();
+        $resultado3 = $result3 -> fetchAll();
+        echo "Compra exitosa";
     }
     ?>
 
