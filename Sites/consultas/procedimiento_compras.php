@@ -19,15 +19,11 @@
     $vale = "No esta en stock";
 
     // Si nos interesa acceder a los booleanos que retorna el procedimiento, debemos hacer fetch de los resultados
-    $resultados = $result -> fetchAll();
-    echo "{$resultados[0]}";
+    $resultados = $result -> fetchAll()
     echo "{$resultados[0][0]}";
-    echo "{$resultados}";
-    foreach ($resultados[0] as $key => $value) {
-    if($value == 1){
+    if($resultados[0][0] == 1){
         $vale = 'Si esta en stock';
         }
-    }
     ?>
     <?php
     if ($vale == "No esta en stock") {
@@ -40,13 +36,9 @@
         $result2 -> execute();
         $vale2 = "Compra no puede proceder";
         $resultado2 = $result2 -> fetchAll();
-        echo "{$resultado2[0]}";
-        if (is_array($resultado2)) {
-            foreach ($resultado2[0] as $key2 => $value2) {
-            if($value2 == 1){
-                $vale2 = 'Compra disponible';
-                }
-            }
+        echo "{$resultado2[0][0]}";
+        if($resultado2[0][0] == 1){
+            $vale2 = 'Compre se puede';
         }
     }
     ?>
