@@ -18,6 +18,6 @@ $row = $result -> fetchAll();
 
 <label>Precio: <?php echo $row[0][2]; ?></label> <br>
 <label>Descripción: <?php echo $row[0][3]; ?></label> <br>
-<label>Tipo: <?php echo $row2[0][4]; ?></label> <br>
+<label>Tipo: <?php echo $row[0][4]; ?></label> <br>
 
 <?php include('../templates/footer.html'); ?>
