@@ -8,10 +8,7 @@
     $producto = $_POST['Producto'];
     $lista = explode(":", $producto);
     $direccion = $_POST['Direccion'];
-    echo "{$direccion}";
     $lista2 = explode(":", $direccion);
-    echo "{$lista2[0]}";
-    echo "{$lista2[1]}";
     $id = $_POST['infotienda'];
     // Enviamos del post la informacion a la query con nuestro procedimiento almacenado que realizará
     // las verificaciones correspondientes
@@ -33,13 +30,11 @@
     } else {
         echo "Se sigue con el paso 2";
         $ruti = $_SESSION['rut'];
-        $query2 = "SELECT verificar_comunausuario(619, '$id');";
+        $query2 = "SELECT verificar_comunausuario('$lista2[0]', '$id');";
         $result2 = $db -> prepare($query2);
         $result2 -> execute();
         $vale2 = "Compra no puede proceder";
         $resultado2 = $result2 -> fetchAll();
-        var_dump($resultado2);
-        echo "{$resultado2[0][0]}";
         if($resultado2[0][0] == 1){
             $vale2 = 'Compre se puede';
         }
