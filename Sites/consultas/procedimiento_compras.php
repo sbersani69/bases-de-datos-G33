@@ -49,6 +49,7 @@
         $resultp -> execute();
         $resultadop = $resultp -> fetchAll();
         $uid = intval($resultadop[0][0]);
+        echo "{$uid}"
         $query3 = "SELECT compra_a_realizar('uid', '$id', '$lista2[0]', '$lista[0]');";
         $result3 = $db -> prepare($query3);
         $result3 -> execute();
