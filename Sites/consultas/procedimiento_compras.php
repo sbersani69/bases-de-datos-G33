@@ -25,7 +25,6 @@
         }
     ?>
     <?php
-    $vale2 = "Compra no puede proceder";
     if ($vale == "No esta en stock") {
         echo "Tienda no vende el producto";
     } else {
@@ -35,15 +34,16 @@
         $result2 = $db -> prepare($query2);
         $result2 -> execute();
         $resultado2 = $result2 -> fetchAll();
+        $vale2 = "Compra no puede proceder";
         if($resultado2[0][0] == 1){
-            $vale2 = 'Compre se puede';
+            $vale2 = 'Compra se puede';
         }
     }
     ?>
     <?php
-    if ($vale2 == "Compra no puede proceder") {
+    if ($vale2 == 'Compra no puede proceder') {
         echo "Tienda no tiene despacho a la direccion del usuario";
-    } else {
+    } elseif ($vale2 == 'Compra se puede') {
         echo "Compra puede ser realizada FALTA ACÁ";
-        }
+    }
     ?>
