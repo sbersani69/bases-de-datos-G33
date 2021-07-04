@@ -25,6 +25,7 @@
         }
     ?>
     <?php
+    $vale2 = "Compra no puede proceder";
     if ($vale == "No esta en stock") {
         echo "Tienda no vende el producto";
     } else {
@@ -33,7 +34,6 @@
         $query2 = "SELECT verificar_comunausuario('$lista2[0]', '$id');";
         $result2 = $db -> prepare($query2);
         $result2 -> execute();
-        $vale2 = "Compra no puede proceder";
         $resultado2 = $result2 -> fetchAll();
         if($resultado2[0][0] == 1){
             $vale2 = 'Compre se puede';
