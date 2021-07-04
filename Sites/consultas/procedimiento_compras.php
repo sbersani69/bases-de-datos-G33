@@ -51,5 +51,4 @@
     } else {
         echo "Compra puede ser realizada FALTA ACÁ";
         }
-    }
     ?>
