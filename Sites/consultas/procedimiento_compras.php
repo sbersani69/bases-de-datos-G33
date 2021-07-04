@@ -37,8 +37,8 @@
         $result2 = $db -> prepare($query2);
         $result2 -> execute();
         $vale2 = "Compra no puede proceder";
-        $result2 = $result2 -> fetchAll();
-        foreach ($result2[0] as $key => $value) {
+        $resultado2 = $result2 -> fetchAll();
+        foreach ($resultado2[0] as $key => $value) {
             if($value == 1){
                 $vale2 = 'Compra disponible';
             }
@@ -47,7 +47,7 @@
     ?>
     <?php
     if ($vale2 == "Compra no puede proceder") {
-    echo "Tienda no tiene despacho a la direccion del usuario";
+        echo "Tienda no tiene despacho a la direccion del usuario";
     } else {
         echo "Compra puede ser realizada FALTA ACÁ";
         }
