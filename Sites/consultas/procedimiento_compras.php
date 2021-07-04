@@ -19,7 +19,7 @@
     $vale = "No esta en stock";
 
     // Si nos interesa acceder a los booleanos que retorna el procedimiento, debemos hacer fetch de los resultados
-    $resultados = $result -> fetchAll()
+    $resultados = $result -> fetchAll();
     echo "{$resultados[0][0]}";
     if($resultados[0][0] == 1){
         $vale = 'Si esta en stock';
