@@ -9,7 +9,6 @@
     $lista = explode(":", $producto);
     $direccion = $_POST['Direccion'];
     $lista2 = explode(":", $direccion);
-    echo "{$lista2[0]}";
     $id = $_POST['infotienda'];
     // Enviamos del post la informacion a la query con nuestro procedimiento almacenado que realizará
     // las verificaciones correspondientes
@@ -21,7 +20,6 @@
 
     // Si nos interesa acceder a los booleanos que retorna el procedimiento, debemos hacer fetch de los resultados
     $resultados = $result -> fetchAll();
-    echo "{$resultados[0][0]}";
     if($resultados[0][0] == 1){
         $vale = 'Si esta en stock';
         }
@@ -37,9 +35,7 @@
         $result2 -> execute();
         $vale2 = "Compra no puede proceder";
         $resultado2 = $result2 -> fetchAll();
-        echo "{$resultado2[0][0]}";
-        echo "{$resultado2[0]}";
-        echo "{$resultado2[0][0][0]}";
+        echo "{$resultado2}";
         if($resultado2[0][0] == 1){
             $vale2 = 'Compre se puede';
         }
