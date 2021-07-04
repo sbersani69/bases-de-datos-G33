@@ -1,7 +1,7 @@
 CREATE OR REPLACE FUNCTION
 
 -- declaramos la función y sus argumentos
-compra_a_realizar (id_usuario int, id_tienda int, id_direccion, id_producto int)
+compra_a_realizar (id_usuario int, id_tienda int, id_direccion int, id_producto int)
 
 -- declaramos lo que retorna, en este caso un booleano
 RETURNS BOOLEAN AS $$
