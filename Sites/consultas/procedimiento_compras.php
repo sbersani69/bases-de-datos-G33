@@ -35,6 +35,7 @@
         $result2 -> execute();
         $vale2 = "Compra no puede proceder";
         $resultado2 = $result2 -> fetchAll();
+        var_dump($resultado2);
         echo "{$resultado2[0][0]}";
         if($resultado2[0][0] == 1){
             $vale2 = 'Compre se puede';
