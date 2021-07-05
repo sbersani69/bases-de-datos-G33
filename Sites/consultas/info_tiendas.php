@@ -62,3 +62,9 @@ $lista = explode(":", $tienda);
     <input type="hidden" name="infotienda" value="<?php echo $lista[0]; ?>">
     <input type="submit" value="Seleccionar" />
     </form>
+
+   <h3 align="center"> BEST SELLERS </h3>
+   <form align="center" action="comprase.php" method="post">
+   <p><input type="hidden" name="infotienda" value="<?php echo $lista[0]; ?>"></p>
+   <p><input type="submit" value="Productos más vendidos"></p>
+   </form>
